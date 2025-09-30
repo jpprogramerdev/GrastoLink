@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Projetos\\GastroLink\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\itempedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\itempedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\migrations\\20250930132841_firstmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\migrations\\20250930132841_firstmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,6 +47,10 @@
       "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\mesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\itempedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\itempedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\formapagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\formapagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 203,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,119 +78,184 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pedido.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Pedido.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pedido.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\Pedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:28:40.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ItemPedido.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\ItemPedido.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\ItemPedido.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\ItemPedido.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\ItemPedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "20250930132841_FirstMigration.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Migrations\\20250930132841_FirstMigration.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Migrations\\20250930132841_FirstMigration.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Migrations\\20250930132841_FirstMigration.cs",
+              "RelativeToolTip": "APIGastroLink\\Migrations\\20250930132841_FirstMigration.cs",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAgwCABAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:27:10.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Prato.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Prato.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Prato.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Prato.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\Prato.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:25:24.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Pagamento.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pagamento.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Pagamento.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pagamento.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\Pagamento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:23:18.283Z",
+              "WhenOpened": "2025-09-30T13:28:43.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Usuario.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:21:38.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Mesa.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Mesa.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Mesa.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Mesa.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\Mesa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:18:51.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormaPagamento.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\FormaPagamento.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\FormaPagamento.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\FormaPagamento.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\FormaPagamento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:17:52.788Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CategoriaPrato.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\CategoriaPrato.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\CategoriaPrato.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\CategoriaPrato.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\CategoriaPrato.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:17:26.885Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\appsettings.json",
+              "RelativeDocumentMoniker": "APIGastroLink\\appsettings.json",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\appsettings.json",
+              "RelativeToolTip": "APIGastroLink\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-30T13:28:15.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Program.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Program.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Program.cs",
+              "RelativeToolTip": "APIGastroLink\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T13:27:09.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "APIGastroLink\\Context\\AppDbContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T13:14:48.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Log.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Log.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Log.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Log.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\Log.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T13:03:32.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Usuario.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T12:59:37.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "TipoUsuario.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\TipoUsuario.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\Models\\TipoUsuario.cs",
               "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\TipoUsuario.cs",
               "RelativeToolTip": "APIGastroLink\\Models\\TipoUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:16:18.909Z",
+              "WhenOpened": "2025-09-30T12:59:35.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Prato.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Prato.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Prato.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Prato.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\Prato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T12:59:20.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pedido.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Pedido.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pedido.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\Pedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T12:58:52.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Pagamento.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pagamento.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Pagamento.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pagamento.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\Pagamento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T12:58:39.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Mesa.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Mesa.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Mesa.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Mesa.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\Mesa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T12:58:36.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ItemPedido.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\ItemPedido.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\ItemPedido.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\ItemPedido.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\ItemPedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T12:58:32.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FormaPagamento.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\FormaPagamento.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\FormaPagamento.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\FormaPagamento.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\FormaPagamento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T12:58:29.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CategoriaPrato.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\CategoriaPrato.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\CategoriaPrato.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\CategoriaPrato.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\CategoriaPrato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T12:58:20.711Z",
               "EditorCaption": ""
             }
           ]
