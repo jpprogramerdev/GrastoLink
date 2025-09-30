@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIGastroLink.Models {
     [Table("FORMAS_PAGAMENTO")]
-    public class FormaPagamento {
+    public class FormaPagamento : EntidadeDominio {
         [Key]
         [Column("FPG_ID")]
         public int Id { get; set; }

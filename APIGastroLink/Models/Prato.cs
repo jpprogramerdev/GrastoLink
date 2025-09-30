@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIGastroLink.Models {
     [Table("PRATOS")]
-    public class Prato {
+    public class Prato : EntidadeDominio {
         [Key]
         [Column("PRA_ID")]
         public int Id { get; set; }
