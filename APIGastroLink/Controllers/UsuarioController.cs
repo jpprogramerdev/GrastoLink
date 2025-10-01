@@ -29,6 +29,25 @@ namespace APIGastroLink.Controllers {
 
             return Ok(usuariosDTO);
         }
-     
+
+        //POST api-gastrolink/usuarios
+        [HttpPost]
+        public async Task<ActionResult<Usuario>> PostUsuario([FromBody] UsuarioCreateDTO UsuarioDTO) {
+            if (UsuarioDTO == null) {
+                return BadRequest("Dados ínválidos");
+            }
+
+            var Usuario = new Usuario {
+                Nome = UsuarioDTO.Nome.ToUpper().Trim(),
+                CPF = UsuarioDTO.CPF,
+                Senha = UsuarioDTO.Senha,
+                Ativo = UsuarioDTO.Ativo,
+                TipoUsuarioId = UsuarioDTO.TipoUsuarioId
+            };
+
+            await _daoUsuario.Insert(Usuario);
+
+            return Created("Usuario criado com sucesso", Usuario);
+        }
     }
 }
