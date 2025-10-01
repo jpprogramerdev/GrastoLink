@@ -23,9 +23,7 @@ namespace APIGastroLink.DAO {
 
         public async Task<IEnumerable<EntidadeDominio>> SelectAll() => await _context.Usuarios.Include(u => u.TipoUsuario).ToListAsync();
 
-        public Task<EntidadeDominio> SelectById(int id) {
-            throw new NotImplementedException();
-        }
+        public async Task<EntidadeDominio> SelectById(int id) => await _context.Usuarios.Include(u => u.TipoUsuario).FirstOrDefaultAsync(u => u.Id == id);
 
         public Task Update(EntidadeDominio entidadeDominio) {
             throw new NotImplementedException();

@@ -13,10 +13,10 @@ namespace APIGastroLink.Controllers {
         public UsuarioController(IDAOUsuario daoUsuario) {
             _daoUsuario = daoUsuario;
         }
-        
+
         //GET api-gastrolink/usuarios
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios() {
+        public async Task<ActionResult<IEnumerable<UsuarioDTO>>> GetUsuarios() {
             var usuarios = (await _daoUsuario.SelectAll()).Cast<Usuario>();
 
             var usuariosDTO = usuarios.Select(u => new UsuarioDTO {
@@ -24,10 +24,35 @@ namespace APIGastroLink.Controllers {
                 Nome = u.Nome,
                 CPF = u.CPF,
                 Ativo = u.Ativo,
-                Tipo = u.TipoUsuario?.Tipo,
+                TipoUsuario = u.TipoUsuario?.Tipo,
             });
 
             return Ok(usuariosDTO);
+        }
+
+        // GET api-gastrolink/usuarios/id
+        [HttpGet("{id}")]
+
+        public async Task<ActionResult<UsuarioDTO>> GetUsuarioById(int id) {
+            if (id == 0) {
+                return BadRequest("Id é obrigatório");
+            }
+
+            var usuario = (Usuario)(await _daoUsuario.SelectById(id));
+
+            if(usuario == null) {
+                return NotFound();
+            }
+
+            var usuarioDTO = new UsuarioDTO{
+                Id = usuario.Id,
+                Nome = usuario.Nome,
+                CPF = usuario.CPF,
+                Ativo = usuario.Ativo,
+                TipoUsuario = usuario.TipoUsuario?.Tipo,
+            };
+
+            return Ok(usuarioDTO);
         }
 
         //POST api-gastrolink/usuarios
