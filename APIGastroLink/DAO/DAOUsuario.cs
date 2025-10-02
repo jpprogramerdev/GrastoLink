@@ -23,8 +23,23 @@ namespace APIGastroLink.DAO {
 
         public async Task<EntidadeDominio> SelectById(int id) => await _context.Usuarios.Include(u => u.TipoUsuario).FirstOrDefaultAsync(u => u.Id == id);
 
-        public Task Update(EntidadeDominio entidadeDominio) {
-            throw new NotImplementedException();
+        public async Task Update(EntidadeDominio entidadeDominio) {
+            var usuario = (Usuario)entidadeDominio;
+
+            var usuarioExistente = await _context.Usuarios.FindAsync(usuario.Id);
+
+            if(usuarioExistente == null) {
+                throw new KeyNotFoundException();
+            }
+
+            usuarioExistente.Nome = usuario.Nome;
+            usuarioExistente.CPF = usuario.CPF;
+            usuarioExistente.Senha = usuario.Senha;
+            usuarioExistente.Ativo = usuario.Ativo;
+            usuarioExistente.TipoUsuarioId = usuario.TipoUsuarioId;
+
+            _context.Usuarios.Update(usuarioExistente);
+            await _context.SaveChangesAsync();
         }
     }
 }

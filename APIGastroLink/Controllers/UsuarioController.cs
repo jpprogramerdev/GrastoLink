@@ -96,5 +96,31 @@ namespace APIGastroLink.Controllers {
                 return BadRequest($"Falha ao tentar inativar usuario {ex.Message}");
             }
         }
+
+        //PUT api-gastrolink/usuarios
+        [HttpPut]
+        public async Task<ActionResult> UpdateUsuario([FromBody] UsuarioUpdateDTO UsuarioDTO) {
+            if (UsuarioDTO == null) {
+                return BadRequest("Dados ínválidos");
+            }
+
+            var Usuario = new Usuario {
+                Id = UsuarioDTO.Id,
+                Nome = UsuarioDTO.Nome.ToUpper().Trim(),
+                CPF = UsuarioDTO.CPF,
+                Senha = UsuarioDTO.Senha,
+                Ativo = UsuarioDTO.Ativo,
+                TipoUsuarioId = UsuarioDTO.TipoUsuarioId
+            };
+
+            try {
+                await _daoUsuario.Update(Usuario);
+                return Ok("Sucesso ao atualizar o usuario");
+            }catch(KeyNotFoundException KeyEx) {
+                return BadRequest($"Falha ao tentar atualizar o usuario: ID da URL não confere com o do objeto enviado.");
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao tentar atualizar o usuario: {ex.Message}");
+            }
+        }
     }
 }
