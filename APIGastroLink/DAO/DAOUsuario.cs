@@ -12,9 +12,7 @@ namespace APIGastroLink.DAO {
             _context = context;
         }
 
-        public Task Delete(EntidadeDominio entidadeDominio) {
-            throw new NotImplementedException();
-        }
+        public async Task Delete(EntidadeDominio entidadeDominio) => await _context.Database.ExecuteSqlRawAsync("EXEC PROC_EXCLUSAO_LOGICA_USUARIO @p0", ((Usuario)entidadeDominio).Id);
 
         public async Task Insert(EntidadeDominio entidadeDominio){
             _context.Usuarios.Add((Usuario)entidadeDominio);

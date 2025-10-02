@@ -41,7 +41,8 @@ namespace APIGastroLink.Controllers {
             var usuario = (Usuario)(await _daoUsuario.SelectById(id));
 
             if(usuario == null) {
-                return NotFound();
+                return NotFound("Usuario não encontrado");
+
             }
 
             var usuarioDTO = new UsuarioDTO{
@@ -73,6 +74,27 @@ namespace APIGastroLink.Controllers {
             await _daoUsuario.Insert(Usuario);
 
             return Created("Usuario criado com sucesso", Usuario);
+        }
+
+        //DELETE api-gastrolink/usuarios/id
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteUsuario(int id) {
+            if (id == 0) { 
+                return BadRequest("Id é obrigatório");
+            }
+
+            var usuario = (Usuario)(await _daoUsuario.SelectById(id));
+
+            if(usuario == null) {
+                return NotFound("Usuario não encontrado");
+            }
+
+            try { 
+                await _daoUsuario.Delete(new Usuario { Id = id });
+                return Ok("Usuario inativado com sucesso");
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao tentar inativar usuario {ex.Message}");
+            }
         }
     }
 }
