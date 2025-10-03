@@ -1,4 +1,5 @@
 ﻿using APIGastroLink.DAO.Interface;
+using APIGastroLink.DTO;
 using APIGastroLink.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,9 +16,16 @@ namespace APIGastroLink.Controllers {
 
         //GET api-gastrolink/mesa
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Mesa>>> GetMesas() {
+        public async Task<ActionResult<IEnumerable<MesaDTO>>> GetMesas() {
             var mesas = (await _daoMesa.SelectAll()).Cast<Mesa>().ToList();
-            return Ok(mesas);
+            var mesasDTO = mesas.Select(m => new MesaDTO {
+                Id = m.Id,
+                Numero = m.Numero,
+                Status = m.Status.ToString(),
+                Pedidos = m.Pedidos.ToList()
+            });
+
+            return Ok(mesasDTO);
         }
 
         //POST

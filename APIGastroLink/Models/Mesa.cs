@@ -14,7 +14,7 @@ namespace APIGastroLink.Models {
 
         [Required]
         [Column("MSA_STATUS")]
-        public string Status { get; set; }
+        public StatusMesa Status { get; set; }
 
         //Relation
         public ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
