@@ -20,12 +20,22 @@ namespace APIGastroLink.DAO {
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<EntidadeDominio>> SelectAll() => await _context.CategoriasPratos.ToListAsync();
+        public async Task<IEnumerable<EntidadeDominio>> SelectAll() => await _context.CategoriasPratos.Include(p => p.Pratos).ToListAsync();
 
-        public async Task<EntidadeDominio> SelectById(int id) => await _context.CategoriasPratos.SingleOrDefaultAsync(c => c.Id == id);
+        public async Task<EntidadeDominio> SelectById(int id) => await _context.CategoriasPratos.Include(p => p.Pratos).SingleOrDefaultAsync(c => c.Id == id);
 
-        public Task Update(EntidadeDominio entidadeDominio) {
-            throw new NotImplementedException();
+        public async Task Update(EntidadeDominio entidadeDominio) {
+            var categoriaPrato = (CategoriaPrato)(entidadeDominio);
+
+            var categoriaPratoExistente = await _context.CategoriasPratos.FindAsync(categoriaPrato.Id);
+
+            if(categoriaPratoExistente == null) {
+                throw new KeyNotFoundException();
+            }
+
+            categoriaPratoExistente.Categoria = categoriaPrato.Categoria;
+
+            await _context.SaveChangesAsync();
         }
     }
 }

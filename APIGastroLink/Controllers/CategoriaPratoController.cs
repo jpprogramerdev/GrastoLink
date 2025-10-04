@@ -1,4 +1,5 @@
-﻿using APIGastroLink.DAO.Interface;
+﻿using APIGastroLink.DAO;
+using APIGastroLink.DAO.Interface;
 using APIGastroLink.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +54,21 @@ namespace APIGastroLink.Controllers {
             return Created("Categoria prato criado", CategoriaPrato);
         }
 
-        
+        //PUT api-gastrolink/categoria-prato
+        [HttpPut]
+        public async Task<ActionResult> PutCategoriaPratoo([FromBody] CategoriaPrato CategoriaPrato) {
+            if(CategoriaPrato == null) {
+                return BadRequest("Dado inválidos");
+            }
+            
+            try {
+                await _daoCategoriaPrato.Update(CategoriaPrato);
+                return Ok("Sucesso ao atualizar a categoria de pratos");
+            } catch (KeyNotFoundException KeyEx) {
+                return BadRequest($"Falha ao tentar atualizar a categoria de prato: ID da URL não confere com o do objeto enviado. Detalhes: {KeyEx.Message}");
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao tentar atualizar a categoria de prato: {ex.Message}");
+            }
+        }
     }
 }
