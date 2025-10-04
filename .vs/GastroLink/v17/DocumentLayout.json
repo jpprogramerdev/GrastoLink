@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\mesacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\interface\\idaomesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\interface\\idaomesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\daomesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\daomesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\interface\\idaomesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\interface\\idaomesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,20 +38,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DAOMesa.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOMesa.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOMesa.cs",
               "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOMesa.cs",
               "RelativeToolTip": "APIGastroLink\\DAO\\DAOMesa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAB8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-04T16:33:57.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IDAOMesa.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\Interface\\IDAOMesa.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\DAO\\Interface\\IDAOMesa.cs",
@@ -70,20 +70,20 @@
               "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\MesaController.cs",
               "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\MesaController.cs",
               "RelativeToolTip": "APIGastroLink\\Controllers\\MesaController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAswB4AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-04T16:30:21.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "APIGastroLink\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAIwGEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwGEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-04T16:30:08.762Z",
               "EditorCaption": ""
