@@ -2,6 +2,7 @@
 using APIGastroLink.DAO.Interface;
 using APIGastroLink.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace APIGastroLink.DAO {
     public class DAOMesa : IDAOMesa {
@@ -25,6 +26,8 @@ namespace APIGastroLink.DAO {
         public Task<EntidadeDominio> SelectById(int id) {
             throw new NotImplementedException();
         }
+
+        public async Task<Mesa> SelectByNumero(string numero) => await _context.Mesas.SingleOrDefaultAsync(m => m.Numero == numero);
 
         public Task Update(EntidadeDominio entidadeDominio) {
             throw new NotImplementedException();

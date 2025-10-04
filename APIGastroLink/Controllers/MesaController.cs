@@ -28,7 +28,26 @@ namespace APIGastroLink.Controllers {
             return Ok(mesasDTO);
         }
 
-        //POST
+        //GET api-grstrolink/mesa/por-numero/{numero}
+        [HttpGet("por-numero/{numero}")]
+        public async Task<ActionResult<MesaDTO>> GetMesaByNumero(string numero) {
+            var mesa = await _daoMesa.SelectByNumero(numero);
+
+            if(mesa == null) {
+                return NotFound("Mesa não localizada");
+            }
+
+            var mesaDTO = new MesaDTO {
+                Id = mesa.Id,
+                Numero = mesa.Numero,
+                Status = mesa.Status.ToString(),
+                Pedidos = mesa.Pedidos.ToList()
+            };
+
+            return Ok(mesaDTO);
+        }
+
+        //POST api-gastrolink/mesa
         [HttpPost]
         public async Task<ActionResult<Mesa>> PostMesa([FromBody] Mesa Mesa) {
             if (Mesa == null) {
