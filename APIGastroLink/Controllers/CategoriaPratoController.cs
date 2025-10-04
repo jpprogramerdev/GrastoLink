@@ -20,5 +20,39 @@ namespace APIGastroLink.Controllers {
 
             return Ok(categoriasPrato);
         }
+
+        //GET api-gastrolink/categoria-prato/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CategoriaPrato>> GetById(int id) {
+            if(id == 0) {
+                return BadRequest("É obrigatório informar o id");
+            }
+
+            var categoriaPrato = (CategoriaPrato)(await _daoCategoriaPrato.SelectById(id));
+
+            if(categoriaPrato == null) {
+                return NotFound("Categoria não encontrada");
+            }
+
+            return Ok(categoriaPrato);
+        }
+
+        //POST api-gastrolink/categoria-prato
+        [HttpPost]
+        public async Task<ActionResult> PostCategoriaPrato([FromBody] CategoriaPrato CategoriaPrato) {
+            if (CategoriaPrato == null) {
+                return BadRequest("Dados invalidos");
+            }
+
+            try {
+                await _daoCategoriaPrato.Insert(CategoriaPrato);
+            } catch (Exception ex) {
+                return BadRequest("Falha ao inserir a catagoria de dados");
+            }
+
+            return Created("Categoria prato criado", CategoriaPrato);
+        }
+
+        
     }
 }
