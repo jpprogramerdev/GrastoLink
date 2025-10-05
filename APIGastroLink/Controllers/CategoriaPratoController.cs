@@ -84,7 +84,7 @@ namespace APIGastroLink.Controllers {
 
         //PUT api-gastrolink/categoria-prato
         [HttpPut]
-        public async Task<ActionResult> PutCategoriaPratoo([FromBody] CategoriaPrato CategoriaPrato) {
+        public async Task<ActionResult> PutCategoriaPrato([FromBody] CategoriaPrato CategoriaPrato) {
             if(CategoriaPrato == null) {
                 return BadRequest("Dado inválidos");
             }
@@ -96,6 +96,17 @@ namespace APIGastroLink.Controllers {
                 return BadRequest($"Falha ao tentar atualizar a categoria de prato: ID da URL não confere com o do objeto enviado. Detalhes: {KeyEx.Message}");
             } catch (Exception ex) {
                 return BadRequest($"Falha ao tentar atualizar a categoria de prato: {ex.Message}");
+            }
+        }
+
+        //DELETE api-gastrolink/categoria-prato/{id}
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteCategoriaPrato(int id) {
+            try {
+                await _daoCategoriaPrato.Delete(new CategoriaPrato { Id = id });
+                return NoContent();
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao tentar excluir a categoria de pratos. Detalhes: {ex.Message}");
             }
         }
     }
