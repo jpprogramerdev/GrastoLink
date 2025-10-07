@@ -1,4 +1,5 @@
-﻿using APIGastroLink.DAO.Interface;
+﻿using APIGastroLink.DAO;
+using APIGastroLink.DAO.Interface;
 using APIGastroLink.DTO;
 using APIGastroLink.Models;
 using Microsoft.AspNetCore.Http;
@@ -35,6 +36,34 @@ namespace APIGastroLink.Controllers {
         }
 
         //GET api-gastrolink/prato/id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<PratoDTO>> GetPratoById(int id) {
+            if (id == 0) {
+                return BadRequest("É obrigatório informar o id");
+            }
+
+            var prato = (Prato)(await _daoPrato.SelectById(id));
+
+
+            if (prato == null) {
+                return NotFound("Prato não encontrado");
+            }
+
+            var pratoDto = new PratoDTO {
+                Id = prato.Id,
+                Nome = prato.Nome,
+                Descricao = prato.Descricao,
+                Preco = prato.Preco,
+                TempoMedioPreparo = prato.TempoMedioPreparo,
+                Disponivel = prato.Disponivel,
+                CategoriaPrato = new CategoriaPratoDTO {
+                    Id = prato.CategoriaPrato.Id,
+                    Categoria = prato.CategoriaPrato.Categoria
+                }
+            };
+
+            return Ok(pratoDto);
+        }
 
     }
 }
