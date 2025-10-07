@@ -7,5 +7,6 @@
         public decimal Preco { get; set; }
         public double TempoMedioPreparo { get; set; }
         public bool Disponivel { get; set; }
+        public CategoriaPratoDTO CategoriaPrato { get; set; }
     }
 }
