@@ -27,7 +27,7 @@ namespace APIGastroLink.Controllers {
                 TempoMedioPreparo = p.TempoMedioPreparo,
                 Disponivel = p.Disponivel,
                 CategoriaPrato = new CategoriaPratoDTO {
-                    Id  = p.CategoriaPrato.Id,
+                    Id = p.CategoriaPrato.Id,
                     Categoria = p.CategoriaPrato.Categoria
                 }
             });
@@ -65,5 +65,28 @@ namespace APIGastroLink.Controllers {
             return Ok(pratoDto);
         }
 
+        //POST api-gastrolink/prato
+        [HttpPost]
+        public async Task<ActionResult<Prato>> PostPrato([FromBody] PratoCreateDTO PratoCreateDTO) {
+            if (PratoCreateDTO == null) { 
+                return BadRequest("Dados invalidos") ;
+            }
+
+            var prato = new Prato {
+                Nome  = PratoCreateDTO.Nome,
+                Descricao = PratoCreateDTO.Descricao,
+                Preco = PratoCreateDTO.Preco,
+                TempoMedioPreparo = PratoCreateDTO.TempoMedioPreparo,
+                Disponivel = PratoCreateDTO.Disponivel,
+                CategoriaPratoId = PratoCreateDTO.CategoriaPratoId
+            };
+            
+            try {
+                await _daoPrato.Insert(prato);
+                return Created("Prato criado", prato);
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao salvar o prato: {ex.Message}");
+            }
+        }
     }
 }
