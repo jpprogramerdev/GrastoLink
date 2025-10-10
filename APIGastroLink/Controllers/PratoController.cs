@@ -66,6 +66,26 @@ namespace APIGastroLink.Controllers {
             return Ok(pratoDto);
         }
 
+        //GET api-gastrolink/prato/disponiveis
+        [HttpGet("disponiveis")]
+        public async Task<ActionResult<IEnumerable<PratoDTO>>> GetPratosDisponiveis() {
+            var pratos = (await _daoPrato.SelectAllDisponivel()).ToList();
+            var pratosDtos = pratos.Select(p => new PratoDTO {
+                Id = p.Id,
+                Nome = p.Nome,
+                Descricao = p.Descricao,
+                Preco = p.Preco,
+                TempoMedioPreparo = p.TempoMedioPreparo,
+                Disponivel = p.Disponivel,
+                CategoriaPrato = new CategoriaPratoDTO {
+                    Id = p.CategoriaPrato.Id,
+                    Categoria = p.CategoriaPrato.Categoria
+                }
+            });
+
+            return Ok(pratosDtos);
+        }
+
         //POST api-gastrolink/prato
         [HttpPost]
         public async Task<ActionResult<Prato>> PostPrato([FromBody] PratoCreateDTO PratoCreateDTO) {

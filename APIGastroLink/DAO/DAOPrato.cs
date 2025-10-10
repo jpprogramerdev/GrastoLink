@@ -22,6 +22,7 @@ namespace APIGastroLink.DAO {
 
         public async Task<IEnumerable<EntidadeDominio>> SelectAll() => await _context.Pratos.Include(p => p.CategoriaPrato).ToListAsync();
 
+        public async Task<IEnumerable<Prato>> SelectAllDisponivel() => await _context.Pratos.Include(p => p.CategoriaPrato).Where(p => p.Disponivel).ToListAsync();
 
         public async Task<EntidadeDominio> SelectById(int id) => await _context.Pratos.Include(p => p.CategoriaPrato).SingleOrDefaultAsync(p => p.Id == id);
 
