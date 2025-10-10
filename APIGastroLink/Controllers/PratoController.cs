@@ -89,19 +89,19 @@ namespace APIGastroLink.Controllers {
         //POST api-gastrolink/prato
         [HttpPost]
         public async Task<ActionResult<Prato>> PostPrato([FromBody] PratoCreateDTO PratoCreateDTO) {
-            if (PratoCreateDTO == null) { 
-                return BadRequest("Dados invalidos") ;
+            if (PratoCreateDTO == null) {
+                return BadRequest("Dados invalidos");
             }
 
             var prato = new Prato {
-                Nome  = PratoCreateDTO.Nome,
+                Nome = PratoCreateDTO.Nome,
                 Descricao = PratoCreateDTO.Descricao,
                 Preco = PratoCreateDTO.Preco,
                 TempoMedioPreparo = PratoCreateDTO.TempoMedioPreparo,
                 Disponivel = PratoCreateDTO.Disponivel,
                 CategoriaPratoId = PratoCreateDTO.CategoriaPratoId
             };
-            
+
             try {
                 await _daoPrato.Insert(prato);
                 return Created("Prato criado", prato);
@@ -130,11 +130,35 @@ namespace APIGastroLink.Controllers {
             try {
                 await _daoPrato.Update(prato);
                 return Ok("Sucesso ao atualizar o prato");
-            }catch (KeyNotFoundException KeyEx) {
+            } catch (KeyNotFoundException KeyEx) {
                 return BadRequest($"Falha ao tentar atualizar o prato: ID da URL não confere com o do objeto enviado.");
-            }catch(Exception ex) {
+            } catch (Exception ex) {
                 return BadRequest($"Falha ao atualizar o prato: {ex.Message}");
             }
+        }
+
+        //PUT api-gastrolink/prato/id/altenar-disponibilidade
+        [HttpPut("{id}/altenar-disponibilidade")]
+        public async Task<ActionResult> AlternarDisponibilidade(int id) {
+            var prato = (Prato)(await _daoPrato.SelectById(id));
+
+            if (prato == null) {
+                return BadRequest("Prato não encontrado");
+            }
+
+            TrocarDisponibilidade(prato);
+
+            try {
+                await _daoPrato.Update(prato);
+                return Ok($"O prato '{prato.Nome}' agora está {(prato.Disponivel ? "disponível" : "indisponível")}.");
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao atualizar a disponibilidade. Detalhes: {ex.Message}");
+            }
+        }
+
+
+        private void TrocarDisponibilidade(Prato prato) {
+            prato.Disponivel = !prato.Disponivel;
         }
     }
 }
