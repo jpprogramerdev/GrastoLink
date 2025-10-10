@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Projetos\\GastroLink\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,16 +11,12 @@
       "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\daoprato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dto\\usuariocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dto\\usuariocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\daousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\daousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dto\\pratocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dto\\pratocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\prato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\prato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 203,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Prato.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Prato.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Prato.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Prato.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\Prato.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T23:39:14.525Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -59,65 +38,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PratoCreateDTO.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\PratoCreateDTO.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\DTO\\PratoCreateDTO.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\PratoCreateDTO.cs",
-              "RelativeToolTip": "APIGastroLink\\DTO\\PratoCreateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T23:39:05.418Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsuarioCreateDTO.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\UsuarioCreateDTO.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\DTO\\UsuarioCreateDTO.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\UsuarioCreateDTO.cs",
-              "RelativeToolTip": "APIGastroLink\\DTO\\UsuarioCreateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T23:38:00.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DAOPrato.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPrato.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOPrato.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPrato.cs",
-              "RelativeToolTip": "APIGastroLink\\DAO\\DAOPrato.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAuAAAAAAAAAA==",
+              "Title": "DAOUsuario.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOUsuario.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOUsuario.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOUsuario.cs",
+              "RelativeToolTip": "APIGastroLink\\DAO\\DAOUsuario.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wB8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T12:17:23.648Z",
+              "WhenOpened": "2025-10-10T00:40:43.608Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DAOPrato.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPrato.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOPrato.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPrato.cs",
+              "RelativeToolTip": "APIGastroLink\\DAO\\DAOPrato.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowC8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T00:34:36.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "PratoController.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PratoController.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\PratoController.cs",
               "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PratoController.cs",
               "RelativeToolTip": "APIGastroLink\\Controllers\\PratoController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAiwFAAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAswFwAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T12:04:22.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "APIGastroLink\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowHUAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAcwHkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T12:04:21.197Z",
               "EditorCaption": ""

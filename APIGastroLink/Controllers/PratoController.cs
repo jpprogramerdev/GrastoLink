@@ -4,6 +4,7 @@ using APIGastroLink.DTO;
 using APIGastroLink.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace APIGastroLink.Controllers {
     [ApiController]
@@ -86,6 +87,33 @@ namespace APIGastroLink.Controllers {
                 return Created("Prato criado", prato);
             } catch (Exception ex) {
                 return BadRequest($"Falha ao salvar o prato: {ex.Message}");
+            }
+        }
+
+        //PUT api-gastrolink/prato
+        [HttpPut]
+        public async Task<ActionResult> UpdatePrato([FromBody] PratoCreateDTO PratoCreateDTO) {
+            if (PratoCreateDTO == null) {
+                return BadRequest("Dados invalidos");
+            }
+
+            var prato = new Prato {
+                Id = PratoCreateDTO.Id,
+                Nome = PratoCreateDTO.Nome,
+                Descricao = PratoCreateDTO.Descricao,
+                Preco = PratoCreateDTO.Preco,
+                TempoMedioPreparo = PratoCreateDTO.TempoMedioPreparo,
+                Disponivel = PratoCreateDTO.Disponivel,
+                CategoriaPratoId = PratoCreateDTO.CategoriaPratoId
+            };
+
+            try {
+                await _daoPrato.Update(prato);
+                return Ok("Sucesso ao atualizar o prato");
+            }catch (KeyNotFoundException KeyEx) {
+                return BadRequest($"Falha ao tentar atualizar o prato: ID da URL não confere com o do objeto enviado.");
+            }catch(Exception ex) {
+                return BadRequest($"Falha ao atualizar o prato: {ex.Message}");
             }
         }
     }
