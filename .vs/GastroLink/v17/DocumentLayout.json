@@ -3,16 +3,52 @@
   "WorkspaceRootPath": "C:\\Projetos\\GastroLink\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dto\\pedidoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dto\\pedidoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dto\\itempedidoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dto\\itempedidoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dto\\pedidocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dto\\pedidocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\itempedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\itempedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\daoprato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\daoprato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\daopedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\daopedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\statusmesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\statusmesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\interface\\idaopedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\interface\\idaopedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\pratocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\interface\\idaoprato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,19 +66,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 203,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IDAOPrato.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\Interface\\IDAOPrato.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\Interface\\IDAOPrato.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\Interface\\IDAOPrato.cs",
-              "RelativeToolTip": "APIGastroLink\\DAO\\Interface\\IDAOPrato.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA+AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ItemPedidoResponseDTO.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\ItemPedidoResponseDTO.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\DTO\\ItemPedidoResponseDTO.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\ItemPedidoResponseDTO.cs",
+              "RelativeToolTip": "APIGastroLink\\DTO\\ItemPedidoResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-10T01:11:36.712Z",
+              "WhenOpened": "2025-10-13T23:24:02.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PedidoResponseDTO.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\PedidoResponseDTO.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\DTO\\PedidoResponseDTO.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\PedidoResponseDTO.cs",
+              "RelativeToolTip": "APIGastroLink\\DTO\\PedidoResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T23:23:17.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PedidoCreateDTO.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\PedidoCreateDTO.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\DTO\\PedidoCreateDTO.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DTO\\PedidoCreateDTO.cs",
+              "RelativeToolTip": "APIGastroLink\\DTO\\PedidoCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T23:10:17.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ItemPedido.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\ItemPedido.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\ItemPedido.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\ItemPedido.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\ItemPedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T23:09:47.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StatusMesa.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\StatusMesa.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\StatusMesa.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\StatusMesa.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\StatusMesa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T23:01:54.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pedido.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Pedido.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Pedido.cs",
+              "RelativeToolTip": "APIGastroLink\\Models\\Pedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T23:01:45.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Program.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Program.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Program.cs",
+              "RelativeToolTip": "APIGastroLink\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T22:33:39.925Z",
               "EditorCaption": ""
             },
             {
@@ -55,7 +169,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "DAOPedido.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPedido.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOPedido.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPedido.cs",
+              "RelativeToolTip": "APIGastroLink\\DAO\\DAOPedido.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T22:36:51.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IDAOPedido.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\Interface\\IDAOPedido.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\Interface\\IDAOPedido.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\Interface\\IDAOPedido.cs",
+              "RelativeToolTip": "APIGastroLink\\DAO\\Interface\\IDAOPedido.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T22:36:27.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "APIGastroLink\\Controllers\\PedidoController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA3wDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T14:41:13.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IDAOPrato.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\Interface\\IDAOPrato.cs",
+              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\Interface\\IDAOPrato.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\Interface\\IDAOPrato.cs",
+              "RelativeToolTip": "APIGastroLink\\DAO\\Interface\\IDAOPrato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T01:11:36.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "DAOUsuario.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOUsuario.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOUsuario.cs",
@@ -63,44 +228,30 @@
               "RelativeToolTip": "APIGastroLink\\DAO\\DAOUsuario.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAA1wB8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-10T00:40:43.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-10T00:40:43.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DAOPrato.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPrato.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOPrato.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPrato.cs",
-              "RelativeToolTip": "APIGastroLink\\DAO\\DAOPrato.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBwAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-10T00:34:36.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "PratoController.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PratoController.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\PratoController.cs",
               "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PratoController.cs",
               "RelativeToolTip": "APIGastroLink\\Controllers\\PratoController.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAkwIwAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAkwIQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T12:04:22.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "APIGastroLink\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAcwHkAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCMAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T12:04:21.197Z",
               "EditorCaption": ""

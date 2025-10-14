@@ -1,0 +1,61 @@
+﻿using APIGastroLink.DAO.Interface;
+using APIGastroLink.DTO;
+using APIGastroLink.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace APIGastroLink.Controllers {
+    [ApiController]
+    [Route("api-gastrolink/pedido")]
+    public class PedidoController : ControllerBase {
+        private IDAOPedido _daoPedido;
+        public PedidoController(IDAOPedido daoPedido) {
+            _daoPedido = daoPedido;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<PedidoResponseDTO>>PostPedido([FromBody]PedidoCreateDTO PedidoCreateDTO) {
+            if(PedidoCreateDTO == null) {
+                return BadRequest("Dados invalidos.");
+            }
+
+            var pedido = new Pedido {
+                UsuarioId = PedidoCreateDTO.UsuarioId,
+                MesaId = PedidoCreateDTO.MesaId,
+                DataHora = DateTime.Now,
+                Status = "RECEBIDO",
+                ValorTotal = 0,
+                ItensPedido = PedidoCreateDTO.ItensPedido.Select(ip => new ItemPedido {
+                    PratoId = ip.PratoId,
+                    Quantidade = ip.Quantidade,
+                    Status = "RECEBIDO"
+                }).ToList()
+            };
+
+
+            try {
+                await _daoPedido.Insert(pedido);
+
+                var pedidoResponse = new PedidoResponseDTO {
+                    Id = pedido.Id,
+                    DataHora = pedido.DataHora,
+                    Status = pedido.Status,
+                    MesaId = pedido.MesaId,
+                    UsuarioId = pedido.UsuarioId,
+                    ValorTotal = pedido.ItensPedido.Sum(i => i.Quantidade * i.Prato?.Preco ?? 0),
+                    Itens = pedido.ItensPedido.Select(i => new ItemPedidoResponseDTO {
+                        PratoId = i.PratoId,
+                        Quantidade = i.Quantidade,
+                        Status = i.Status
+                    }).ToList()
+                };
+                return Created("Pedido criado com sucesso", pedidoResponse);
+
+
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao salvar o pedido: {ex.Message}");
+            }
+
+        }
+    }
+}
