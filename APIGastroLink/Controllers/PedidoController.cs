@@ -55,7 +55,36 @@ namespace APIGastroLink.Controllers {
             } catch (Exception ex) {
                 return BadRequest($"Falha ao salvar o pedido: {ex.Message}");
             }
+        }
 
+        [HttpPost("{pedidoId}/itens")]
+        public async Task<ActionResult<ItemPedidoResponseDTO>> AdicionarItem(int pedidoId, [FromBody]ItemPedidoCreateDTO ItemPedidoCreateDTO) {
+            var pedido = (await _daoPedido.SelectById(pedidoId)) as Pedido;
+
+            if(pedido == null) {
+                return NotFound("Pedido nao encontrado.");
+            }
+
+            var novoItem = new ItemPedido {
+                PratoId = ItemPedidoCreateDTO.PratoId,
+                Quantidade = ItemPedidoCreateDTO.Quantidade,
+                Observacoes = ItemPedidoCreateDTO.Observacoes,
+                Status = "RECEBIDO",
+                PedidoId = pedidoId
+            };
+
+            pedido.ItensPedido.Add(novoItem);
+            try {
+                await _daoPedido.Update(pedido);
+                var itemResponse = new ItemPedidoResponseDTO {
+                    PratoId = novoItem.PratoId,
+                    Quantidade = novoItem.Quantidade,
+                    Status = novoItem.Status
+                };
+                return Created("Item adicionado com sucesso", itemResponse);
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao adicionar o item: {ex.Message}");
+            }
         }
     }
 }

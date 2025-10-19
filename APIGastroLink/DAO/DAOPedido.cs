@@ -1,6 +1,7 @@
 ﻿using APIGastroLink.Context;
 using APIGastroLink.DAO.Interface;
 using APIGastroLink.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace APIGastroLink.DAO {
     public class DAOPedido : IDAOPedido {
@@ -23,12 +24,12 @@ namespace APIGastroLink.DAO {
             throw new NotImplementedException();
         }
 
-        public Task<EntidadeDominio> SelectById(int id) {
-            throw new NotImplementedException();
-        }
+        public async Task<EntidadeDominio> SelectById(int id) => await _context.Pedidos.Include(p => p.ItensPedido).ThenInclude(i => i.Prato).Include(p => p.Mesa).Include(p => p.Usuario).SingleOrDefaultAsync(p => p.Id == id);
 
-        public Task Update(EntidadeDominio entidadeDominio) {
-            throw new NotImplementedException();
+        public async Task Update(EntidadeDominio entidadeDominio) {
+            var pedido = (Pedido)entidadeDominio;
+            _context.Pedidos.Update(pedido);
+            await _context.SaveChangesAsync();
         }
     }
 }
