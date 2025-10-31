@@ -17,6 +17,7 @@ namespace APIGastroLink.Controllers {
             _pedidoService = pedidoService;
         }
 
+        //POST api-gastrolink/pedido
         [HttpPost]
         public async Task<ActionResult<PedidoResponseDTO>> PostPedido([FromBody] PedidoCreateDTO PedidoCreateDTO) {
             if (PedidoCreateDTO == null) {
@@ -64,6 +65,7 @@ namespace APIGastroLink.Controllers {
             }
         }
 
+        //GET api-gastrolink/pedido/{pedidoId}
         [HttpGet("{pedidoId}")]
         public async Task<ActionResult<PedidoResponseDTO>> GetPedido(int pedidoId) {
             var pedido = (await _daoPedido.SelectById(pedidoId)) as Pedido;
@@ -88,6 +90,7 @@ namespace APIGastroLink.Controllers {
             return Ok(pedidoResponse);
         }
 
+        //POST api-gastrolink/pedido/{pedidoId}/itens
         [HttpPost("{pedidoId}/itens")]
         public async Task<ActionResult<ItemPedidoResponseDTO>> AdicionarItem(int pedidoId, [FromBody]ItemPedidoCreateDTO ItemPedidoCreateDTO) {
             var pedido = (await _daoPedido.SelectById(pedidoId)) as Pedido;
