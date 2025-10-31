@@ -12,7 +12,7 @@ namespace APIGastroLink.Models {
         [Column("PED_DATA_HORA")]
         public DateTime DataHora { get; set; }
 
-        [Required]
+        [Required] 
         [Column("PED_STATUS")]
         public string Status { get; set; }
 

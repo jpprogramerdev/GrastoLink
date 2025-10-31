@@ -1,6 +1,7 @@
 ﻿using APIGastroLink.DAO.Interface;
 using APIGastroLink.DTO;
 using APIGastroLink.Models;
+using APIGastroLink.Services.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,13 +10,16 @@ namespace APIGastroLink.Controllers {
     [Route("api-gastrolink/pedido")]
     public class PedidoController : ControllerBase {
         private IDAOPedido _daoPedido;
-        public PedidoController(IDAOPedido daoPedido) {
+        private IPedidoService _pedidoService;
+
+        public PedidoController(IDAOPedido daoPedido, IPedidoService pedidoService) {
             _daoPedido = daoPedido;
+            _pedidoService = pedidoService;
         }
 
         [HttpPost]
-        public async Task<ActionResult<PedidoResponseDTO>>PostPedido([FromBody]PedidoCreateDTO PedidoCreateDTO) {
-            if(PedidoCreateDTO == null) {
+        public async Task<ActionResult<PedidoResponseDTO>> PostPedido([FromBody] PedidoCreateDTO PedidoCreateDTO) {
+            if (PedidoCreateDTO == null) {
                 return BadRequest("Dados invalidos.");
             }
 
@@ -32,6 +36,8 @@ namespace APIGastroLink.Controllers {
                 }).ToList()
             };
 
+            pedido.ValorTotal = _pedidoService.CalcularValorTotal(pedido);
+
 
             try {
                 await _daoPedido.Insert(pedido);
@@ -42,19 +48,44 @@ namespace APIGastroLink.Controllers {
                     Status = pedido.Status,
                     MesaId = pedido.MesaId,
                     UsuarioId = pedido.UsuarioId,
-                    ValorTotal = pedido.ItensPedido.Sum(i => i.Quantidade * i.Prato?.Preco ?? 0),
+                    ValorTotal = _pedidoService.CalcularValorTotal(pedido),
                     Itens = pedido.ItensPedido.Select(i => new ItemPedidoResponseDTO {
                         PratoId = i.PratoId,
                         Quantidade = i.Quantidade,
                         Status = i.Status
                     }).ToList()
                 };
-                return Created("Pedido criado com sucesso", pedidoResponse);
+
+                return CreatedAtAction(nameof(GetPedido), new { pedidoId = pedido.Id }, pedidoResponse);
 
 
             } catch (Exception ex) {
                 return BadRequest($"Falha ao salvar o pedido: {ex.Message}");
             }
+        }
+
+        [HttpGet("{pedidoId}")]
+        public async Task<ActionResult<PedidoResponseDTO>> GetPedido(int pedidoId) {
+            var pedido = (await _daoPedido.SelectById(pedidoId)) as Pedido;
+            if (pedido == null) {
+                return NotFound("Pedido nao encontrado.");
+            }
+
+            var pedidoResponse = new PedidoResponseDTO {
+                Id = pedido.Id,
+                DataHora = pedido.DataHora,
+                Status = pedido.Status,
+                MesaId = pedido.MesaId,
+                UsuarioId = pedido.UsuarioId,
+                ValorTotal = _pedidoService.CalcularValorTotal(pedido),
+                Itens = pedido.ItensPedido.Select(i => new ItemPedidoResponseDTO {
+                    PratoId = i.PratoId,
+                    Quantidade = i.Quantidade,
+                    Status = i.Status
+                }).ToList()
+            };
+
+            return Ok(pedidoResponse);
         }
 
         [HttpPost("{pedidoId}/itens")]

@@ -1,6 +1,8 @@
 using APIGastroLink.Context;
 using APIGastroLink.DAO;
 using APIGastroLink.DAO.Interface;
+using APIGastroLink.Services;
+using APIGastroLink.Services.Interface;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -12,6 +14,8 @@ builder.Services.AddTransient<IDAOMesa, DAOMesa>();
 builder.Services.AddTransient<IDAOCategoriaPrato, DAOCategoriaPrato>();
 builder.Services.AddTransient<IDAOPrato, DAOPrato>();
 builder.Services.AddTransient<IDAOPedido, DAOPedido>();
+
+builder.Services.AddTransient<IPedidoService, PedidoService>();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
