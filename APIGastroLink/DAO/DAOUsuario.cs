@@ -41,5 +41,12 @@ namespace APIGastroLink.DAO {
             _context.Usuarios.Update(usuarioExistente);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<EntidadeDominio> Authenticate(string cpf, string senha) {
+            return await _context.Usuarios
+                .Include(u => u.TipoUsuario)
+                .FirstOrDefaultAsync(u => u.CPF == cpf && u.Senha == senha && u.Ativo);
+        }
+
     }
 }
