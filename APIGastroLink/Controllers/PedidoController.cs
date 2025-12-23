@@ -19,6 +19,43 @@ namespace APIGastroLink.Controllers {
             _pedidoService = pedidoService;
         }
 
+        //GET api-gastrolink/pedido/todos-aberto
+        [HttpGet("todos-aberto")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<PedidoResponseDTO>>> GetPedidosAbertos() {
+            try {
+                var pedidos = (await _daoPedido.SelectAll()).Cast<Pedido>().Where(p => p.Status != "FINALIZADO" && p.Status != "CANCELADO").ToList();
+
+                if (pedidos == null || pedidos.Count == 0) {
+                    return Ok("Nenhum pedido aberto encontrado.");
+                }
+
+                var pedidosResponse = pedidos.Select(p => new PedidoResponseDTO {
+                    Id = p.Id,
+                    DataHora = p.DataHora,
+                    Status = p.Status,
+                    Mesa = new MesaDTO {
+                        Id = p.Mesa.Id,
+                        Numero = p.Mesa.Numero,
+                        Status = p.Mesa.Status.ToString()
+                    },
+                    UsuarioId = p.UsuarioId,
+                    ValorTotal = _pedidoService.CalcularValorTotal(p),
+                    Itens = p.ItensPedido.Select(i => new ItemPedidoResponseDTO {
+                        Prato = new PratoDTO {
+                            Nome = i.Prato.Nome,
+                        },
+                        Quantidade = i.Quantidade,
+                        Status = i.Status
+                    }).ToList()
+                }).ToList();
+
+                return Ok(pedidosResponse);
+            } catch (Exception ex) {
+                return BadRequest($"Erro ao recuperar pedidos: {ex.Message}");
+            }
+        }
+
         //POST api-gastrolink/pedido
         [HttpPost]
         public async Task<ActionResult<PedidoResponseDTO>> PostPedido([FromBody] PedidoCreateDTO PedidoCreateDTO) {
@@ -49,11 +86,18 @@ namespace APIGastroLink.Controllers {
                     Id = pedido.Id,
                     DataHora = pedido.DataHora,
                     Status = pedido.Status,
-                    MesaId = pedido.MesaId,
+                    Mesa = new MesaDTO {
+                        Id = pedido.Mesa.Id,
+                        Numero = pedido.Mesa.Numero,
+                        Status = pedido.Mesa.Status.ToString()
+                    },
                     UsuarioId = pedido.UsuarioId,
                     ValorTotal = _pedidoService.CalcularValorTotal(pedido),
                     Itens = pedido.ItensPedido.Select(i => new ItemPedidoResponseDTO {
-                        PratoId = i.PratoId,
+                        Prato = new PratoDTO { 
+                            Id = i.Prato.Id,
+                            Nome = i.Prato.Nome,
+                        },
                         Quantidade = i.Quantidade,
                         Status = i.Status
                     }).ToList()
@@ -79,11 +123,18 @@ namespace APIGastroLink.Controllers {
                 Id = pedido.Id,
                 DataHora = pedido.DataHora,
                 Status = pedido.Status,
-                MesaId = pedido.MesaId,
+                Mesa = new MesaDTO {
+                    Id = pedido.Mesa.Id,
+                    Numero = pedido.Mesa.Numero,
+                    Status = pedido.Mesa.Status.ToString()
+                },
                 UsuarioId = pedido.UsuarioId,
                 ValorTotal = _pedidoService.CalcularValorTotal(pedido),
                 Itens = pedido.ItensPedido.Select(i => new ItemPedidoResponseDTO {
-                    PratoId = i.PratoId,
+                    Prato = new PratoDTO {
+                        Id = i.Prato.Id,
+                        Nome = i.Prato.Nome,
+                    },
                     Quantidade = i.Quantidade,
                     Status = i.Status
                 }).ToList()
@@ -94,10 +145,10 @@ namespace APIGastroLink.Controllers {
 
         //POST api-gastrolink/pedido/{pedidoId}/itens
         [HttpPost("{pedidoId}/itens")]
-        public async Task<ActionResult<ItemPedidoResponseDTO>> AdicionarItem(int pedidoId, [FromBody]ItemPedidoCreateDTO ItemPedidoCreateDTO) {
+        public async Task<ActionResult<ItemPedidoResponseDTO>> AdicionarItem(int pedidoId, [FromBody] ItemPedidoCreateDTO ItemPedidoCreateDTO) {
             var pedido = (await _daoPedido.SelectById(pedidoId)) as Pedido;
 
-            if(pedido == null) {
+            if (pedido == null) {
                 return NotFound("Pedido nao encontrado.");
             }
 
@@ -113,7 +164,10 @@ namespace APIGastroLink.Controllers {
             try {
                 await _daoPedido.Update(pedido);
                 var itemResponse = new ItemPedidoResponseDTO {
-                    PratoId = novoItem.PratoId,
+                    Prato = new PratoDTO {
+                        Id = novoItem.Prato.Id,
+                        Nome = novoItem.Prato.Nome,
+                    },
                     Quantidade = novoItem.Quantidade,
                     Status = novoItem.Status
                 };

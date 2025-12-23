@@ -64,11 +64,18 @@ namespace APIGastroLink.Controllers {
                             Id = p.Pedido.Id,
                             DataHora = p.Pedido.DataHora,
                             Status = p.Pedido.Status,
-                            MesaId = p.Pedido.MesaId,
+                            Mesa = new MesaDTO {
+                                Id = p.Pedido.Mesa.Id,
+                                Numero = p.Pedido.Mesa.Numero,
+                                Status = p.Pedido.Mesa.Status.ToString()
+                            },
                             UsuarioId = p.Pedido.UsuarioId,
                             ValorTotal = _pedidoService.CalcularValorTotal(p.Pedido),
                             Itens = p.Pedido.ItensPedido.Select(i => new ItemPedidoResponseDTO {
-                                PratoId = i.PratoId,
+                                Prato = new PratoDTO { 
+                                    Id = i.Prato.Id,
+                                    Nome = i.Prato.Nome,
+                                },
                                 Quantidade = i.Quantidade,
                                 Status = i.Status
                             }).ToList()

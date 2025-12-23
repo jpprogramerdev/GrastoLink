@@ -14,6 +14,17 @@ builder.Services.AddHttpClient("ApiGastroLink", client => {
 })
 .AddHttpMessageHandler<JwtHandler>();
 
+builder.Services
+    .AddAuthentication("Cookies")
+    .AddCookie("Cookies", options => {
+        options.LoginPath = "/Login/Login";
+        options.AccessDeniedPath = "/Login/Login";
+        options.ExpireTimeSpan = TimeSpan.FromHours(2);
+    });
+
+builder.Services.AddAuthorization();
+
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -25,6 +36,7 @@ if (!app.Environment.IsDevelopment()) {
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

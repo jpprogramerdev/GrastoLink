@@ -1,4 +1,4 @@
-﻿namespace APIGastroLink.DTO {
+﻿namespace MVCGastroLink.DTO {
     public class PedidoResponseDTO {
         public int Id { get; set; }
         public DateTime DataHora { get; set; }

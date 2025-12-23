@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PedidoResponseDTO>
+
+@{
+    ViewData["Title"] = "Todos os Pedidos";
+}
+
+<h2>PRÓXIMOS PEDIDOS</h2>
+
+@{
+    foreach (var Pedido in Model) {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">PEDIDO @Pedido.Id - @Pedido.DataHora</h5>
+                <h6 class="card-subtitle mb-2 text-muted">MESA @Pedido.Mesa.Numero</h6>
+                <ul class="list-group">
+                @{
+                    foreach(var itemPedido in Pedido.Itens){
+                        <li class="list-group-item">@itemPedido.Prato.Nome</li>
+                    }
+                }
+                </ul>
+            </div>
+        </div>
+    }
+}

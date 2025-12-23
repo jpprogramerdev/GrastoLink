@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using MVCGastroLink.DTO;
+using System.Security.Claims;
 using System.Text.Json;
 
 namespace MVCGastroLink.Controllers {
@@ -32,6 +34,16 @@ namespace MVCGastroLink.Controllers {
             var response = await client.PostAsync("auth/login", content);
 
             if (response.IsSuccessStatusCode) {
+                var claims = new List<Claim> {
+                    new Claim(ClaimTypes.NameIdentifier, LoginRequestDTO.CPF)
+                };
+
+                var identity = new ClaimsIdentity(claims, "Cookies");
+
+                var principal = new ClaimsPrincipal(identity);
+
+                await HttpContext.SignInAsync("Cookies", principal);
+
                 var responseContent = await response.Content.ReadAsStringAsync();
 
                 var jsonDoc = JsonDocument.Parse(responseContent);
@@ -44,7 +56,7 @@ namespace MVCGastroLink.Controllers {
                     SameSite = SameSiteMode.Strict
                 });
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("TodosPedidos", "Pedido");
             } else {
                 ModelState.AddModelError(string.Empty, "CPF ou senha inválidos.");
                 return View(LoginRequestDTO);
