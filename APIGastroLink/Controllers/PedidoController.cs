@@ -2,12 +2,14 @@
 using APIGastroLink.DTO;
 using APIGastroLink.Models;
 using APIGastroLink.Services.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APIGastroLink.Controllers {
     [ApiController]
     [Route("api-gastrolink/pedido")]
+    [Authorize]
     public class PedidoController : ControllerBase {
         private IDAOPedido _daoPedido;
         private IPedidoService _pedidoService;

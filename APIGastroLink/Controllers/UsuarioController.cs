@@ -14,28 +14,6 @@ namespace APIGastroLink.Controllers {
             _daoUsuario = daoUsuario;
         }
 
-        //POST api-gastrolink/usuario/auth
-        [HttpPost("auth")]
-        public async Task<ActionResult<UsuarioDTO>> AutenticacaoUsuario(Login Login) { 
-            if (Login == null || string.IsNullOrEmpty(Login.CPF) || string.IsNullOrEmpty(Login.Senha)) {
-                return BadRequest(new MessagemResponseDTO { Mensagem = "Dados de login inválidos" });
-            }
-
-            var usuario = (Usuario)(await _daoUsuario.Authenticate(Login.CPF, Login.Senha));
-            if (usuario == null) {
-                return Unauthorized(new MessagemResponseDTO { Mensagem = "CPF e/ou senha incorretos" });
-            }
-
-            var usuarioDTO = new UsuarioDTO {
-                Id = usuario.Id,
-                Nome = usuario.Nome,
-                CPF = usuario.CPF,
-                Ativo = usuario.Ativo,
-                TipoUsuario = usuario.TipoUsuario?.Tipo,
-            };
-            return Ok(usuarioDTO);
-        }
-
         //GET api-gastrolink/usuarios
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UsuarioDTO>>> GetUsuarios() {
