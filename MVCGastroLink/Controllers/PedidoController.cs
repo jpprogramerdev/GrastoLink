@@ -21,7 +21,12 @@ namespace MVCGastroLink.Controllers {
 
             var client = _httpClientFactory.CreateClient("ApiGastroLink");
 
-            var mesaResponse = await client.GetAsync("mesa");
+            var token = HttpContext.Session.GetString("JWToken");
+
+            client.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
+
+            var mesaResponse = await client.GetAsync("mesa/mesas-livres");
 
             if (!mesaResponse.IsSuccessStatusCode) {
                 ViewData["FalhaBuscaMesas"] = "Erro ao buscar mesas";

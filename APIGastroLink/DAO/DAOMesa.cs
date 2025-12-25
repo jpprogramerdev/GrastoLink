@@ -27,8 +27,9 @@ namespace APIGastroLink.DAO {
 
         public async Task<Mesa> SelectByNumero(string numero) => await _context.Mesas.SingleOrDefaultAsync(m => m.Numero == numero);
 
-        public Task Update(EntidadeDominio entidadeDominio) {
-            throw new NotImplementedException();
+        public async Task Update(EntidadeDominio entidadeDominio) {
+            _context.Mesas.Update((Mesa)entidadeDominio);
+            await _context.SaveChangesAsync();
         }
     }
 }

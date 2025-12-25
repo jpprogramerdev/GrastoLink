@@ -1,7 +1,11 @@
 using APIGastroLink.Context;
 using APIGastroLink.DAO;
 using APIGastroLink.DAO.Interface;
+using APIGastroLink.Facade;
+using APIGastroLink.Facade.Interface;
 using APIGastroLink.Hubs;
+using APIGastroLink.Mapper;
+using APIGastroLink.Mapper.Interface;
 using APIGastroLink.Services;
 using APIGastroLink.Services.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -66,6 +70,10 @@ builder.Services.AddTransient<IDAOPedido, DAOPedido>();
 builder.Services.AddTransient<IDAOPagamento, DAOPagamento>();
 
 builder.Services.AddTransient<IPedidoService, PedidoService>();
+
+builder.Services.AddTransient<IPedidoMapper, PedidoMapper>();
+
+builder.Services.AddScoped<IFacadePedido, FacadePedido>();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

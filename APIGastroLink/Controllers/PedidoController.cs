@@ -1,5 +1,6 @@
 ﻿using APIGastroLink.DAO.Interface;
 using APIGastroLink.DTO;
+using APIGastroLink.Facade.Interface;
 using APIGastroLink.Hubs;
 using APIGastroLink.Models;
 using APIGastroLink.Services.Interface;
@@ -18,10 +19,13 @@ namespace APIGastroLink.Controllers {
         private IPedidoService _pedidoService;
         private readonly IHubContext<PedidoHub> _hubContext;
 
-        public PedidoController(IDAOPedido daoPedido, IPedidoService pedidoService, IHubContext<PedidoHub> hubContext) {
+        private readonly IFacadePedido _facadePedido;
+
+        public PedidoController(IDAOPedido daoPedido, IPedidoService pedidoService, IHubContext<PedidoHub> hubContext, IFacadePedido facadePedido) {
             _daoPedido = daoPedido;
             _pedidoService = pedidoService;
             _hubContext = hubContext;
+            _facadePedido = facadePedido;
         }
 
         //GET api-gastrolink/pedido/todos-aberto
@@ -73,52 +77,12 @@ namespace APIGastroLink.Controllers {
                 return Unauthorized("Usuario nao autenticado.");
             }
 
-            var pedido = new Pedido {
-                UsuarioId = usuarioId,
-                MesaId = PedidoCreateDTO.MesaId,
-                DataHora = DateTime.Now,
-                Status = "RECEBIDO",
-                ValorTotal = 0,
-                ItensPedido = PedidoCreateDTO.ItensPedido.Select(ip => new ItemPedido {
-                    PratoId = ip.PratoId,
-                    Quantidade = ip.Quantidade,
-                    Status = "RECEBIDO"
-                }).ToList()
-            };
-
-
             try {
-                await _daoPedido.Insert(pedido);
-
-
-                pedido = (await _daoPedido.SelectById(pedido.Id)) as Pedido;
-
-                var pedidoResponse = new PedidoResponseDTO {
-                    Id = pedido.Id,
-                    DataHora = pedido.DataHora,
-                    Status = pedido.Status,
-                    Mesa = new MesaDTO {
-                        Id = pedido.Mesa.Id,
-                        Numero = pedido.Mesa.Numero,
-                        Status = pedido.Mesa.Status.ToString()
-                    },
-                    UsuarioId = pedido.UsuarioId,
-                    ValorTotal = _pedidoService.CalcularValorTotal(pedido),
-                    Itens = pedido.ItensPedido.Select(i => new ItemPedidoResponseDTO {
-                        Prato = new PratoDTO {
-                            Id = i.Prato.Id,
-                            Nome = i.Prato.Nome,
-                        },
-                        Quantidade = i.Quantidade,
-                        Status = i.Status
-                    }).ToList()
-                };
+                var pedidoResponse = _facadePedido.SalvarPedido(PedidoCreateDTO, usuarioId).Result;
 
                 await _hubContext.Clients.All.SendAsync("NovoPedido", pedidoResponse);
 
                 return Ok(pedidoResponse);
-
-
             } catch (Exception ex) {
                 return BadRequest($"Falha ao salvar o pedido: {ex.Message}");
             }
