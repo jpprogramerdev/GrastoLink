@@ -32,9 +32,17 @@
     }
 </div>
 
+<audio id="pedidoNovoSound" preload="auto">
+    <source src="~/sounds/pedido-novo.mp3" type="audio/mpeg">
+</audio>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
 <script src="~/js/adicionarPedidoNaTela.js"></script>
+<script src="~/js/tocarSomPedidoNovo.js"></script>
+
+
+<!--Script SignalR-->
 <script>
     const token = document.cookie
     .split('; ')
@@ -57,5 +65,22 @@
     connection.on("NovoPedido", function (pedido) {
         console.log("Novo pedido recebido:", pedido);
         adicionarPedidoNaTela(pedido);
+        tocarSomNovoPedido();
     });
 </script>   
+
+<!--Scrip tocar som-->
+<script>
+    let audioLiberado = false;
+
+    document.addEventListener('click', () => {
+        if(!audioLiberado){
+            const audio = document.getElementById('pedidoNovoSound');
+            audio.play().then(() => {
+                audio.pause();
+                audio.currentTime = 0;
+                audioLiberado = true;
+            })
+        }
+    });
+</script>

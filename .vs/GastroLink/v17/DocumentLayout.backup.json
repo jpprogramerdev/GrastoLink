@@ -7,20 +7,8 @@
       "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\views\\pedido\\todospedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\mapper\\pedidomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\mapper\\pedidomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\wwwroot\\js\\adicionarpedidonatela.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\wwwroot\\js\\adicionarpedidonatela.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\dto\\pedidorequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\dto\\pedidorequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\wwwroot\\js\\tocarsompedidonovo.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\wwwroot\\js\\tocarsompedidonovo.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\dto\\pedidoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\dto\\itempedidoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\dto\\itempedidoresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\views\\pedido\\criarpedido.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\views\\pedido\\criarpedido.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 181,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,46 +38,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "adicionarPedidoNaTela.js",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\wwwroot\\js\\adicionarPedidoNaTela.js",
-              "RelativeDocumentMoniker": "MVCGastroLink\\wwwroot\\js\\adicionarPedidoNaTela.js",
-              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\wwwroot\\js\\adicionarPedidoNaTela.js",
-              "RelativeToolTip": "MVCGastroLink\\wwwroot\\js\\adicionarPedidoNaTela.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-12-25T23:18:45.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PedidoMapper.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Mapper\\PedidoMapper.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Mapper\\PedidoMapper.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Mapper\\PedidoMapper.cs",
-              "RelativeToolTip": "APIGastroLink\\Mapper\\PedidoMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T23:10:59.942Z",
+              "Title": "tocarSomPedidoNovo.js",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\wwwroot\\js\\tocarSomPedidoNovo.js",
+              "RelativeDocumentMoniker": "MVCGastroLink\\wwwroot\\js\\tocarSomPedidoNovo.js",
+              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\wwwroot\\js\\tocarSomPedidoNovo.js",
+              "RelativeToolTip": "MVCGastroLink\\wwwroot\\js\\tocarSomPedidoNovo.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-25T23:39:54.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PedidoController.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PedidoController.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\PedidoController.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PedidoController.cs",
-              "RelativeToolTip": "APIGastroLink\\Controllers\\PedidoController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowFEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T23:08:57.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "ItemPedidoResponseDTO.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\DTO\\ItemPedidoResponseDTO.cs",
               "RelativeDocumentMoniker": "MVCGastroLink\\DTO\\ItemPedidoResponseDTO.cs",
@@ -106,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "PedidoResponseDTO.cs",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\DTO\\PedidoResponseDTO.cs",
               "RelativeDocumentMoniker": "MVCGastroLink\\DTO\\PedidoResponseDTO.cs",
@@ -125,35 +83,10 @@
               "RelativeDocumentMoniker": "MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml",
               "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml",
               "RelativeToolTip": "MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADwAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAgwEQAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-25T19:20:51.012Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PedidoRequestDTO.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\DTO\\PedidoRequestDTO.cs",
-              "RelativeDocumentMoniker": "MVCGastroLink\\DTO\\PedidoRequestDTO.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\DTO\\PedidoRequestDTO.cs",
-              "RelativeToolTip": "MVCGastroLink\\DTO\\PedidoRequestDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T19:08:18.32Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CriarPedido.cshtml",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Pedido\\CriarPedido.cshtml",
-              "RelativeDocumentMoniker": "MVCGastroLink\\Views\\Pedido\\CriarPedido.cshtml",
-              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Pedido\\CriarPedido.cshtml",
-              "RelativeToolTip": "MVCGastroLink\\Views\\Pedido\\CriarPedido.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAYwDoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-25T19:07:19.559Z"
             }
           ]
         }
