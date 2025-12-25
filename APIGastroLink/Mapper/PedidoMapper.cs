@@ -31,7 +31,8 @@ namespace APIGastroLink.Mapper {
             ItensPedido = dto.ItensPedido.Select(i => new ItemPedido {
                 PratoId = i.PratoId,
                 Quantidade = i.Quantidade,
-                Status = "PENDENTE"
+                Status = "PENDENTE",
+                Observacoes = i.Observacoes
             }).ToList()
         };
 
