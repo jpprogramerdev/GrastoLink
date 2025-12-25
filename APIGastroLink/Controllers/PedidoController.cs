@@ -1,10 +1,13 @@
 ﻿using APIGastroLink.DAO.Interface;
 using APIGastroLink.DTO;
+using APIGastroLink.Hubs;
 using APIGastroLink.Models;
 using APIGastroLink.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using System.Security.Claims;
 
 namespace APIGastroLink.Controllers {
     [ApiController]
@@ -13,15 +16,16 @@ namespace APIGastroLink.Controllers {
     public class PedidoController : ControllerBase {
         private IDAOPedido _daoPedido;
         private IPedidoService _pedidoService;
+        private readonly IHubContext<PedidoHub> _hubContext;
 
-        public PedidoController(IDAOPedido daoPedido, IPedidoService pedidoService) {
+        public PedidoController(IDAOPedido daoPedido, IPedidoService pedidoService, IHubContext<PedidoHub> hubContext) {
             _daoPedido = daoPedido;
             _pedidoService = pedidoService;
+            _hubContext = hubContext;
         }
 
         //GET api-gastrolink/pedido/todos-aberto
         [HttpGet("todos-aberto")]
-        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<PedidoResponseDTO>>> GetPedidosAbertos() {
             try {
                 var pedidos = (await _daoPedido.SelectAll()).Cast<Pedido>().Where(p => p.Status != "FINALIZADO" && p.Status != "CANCELADO").ToList();
@@ -58,13 +62,19 @@ namespace APIGastroLink.Controllers {
 
         //POST api-gastrolink/pedido
         [HttpPost]
-        public async Task<ActionResult<PedidoResponseDTO>> PostPedido([FromBody] PedidoCreateDTO PedidoCreateDTO) {
+        public async Task<ActionResult<PedidoResponseDTO>> PostPedido([FromBody] PedidoRequestDTO PedidoCreateDTO) {
             if (PedidoCreateDTO == null) {
                 return BadRequest("Dados invalidos.");
             }
 
+            var usuarioId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            if (usuarioId == 0) {
+                return Unauthorized("Usuario nao autenticado.");
+            }
+
             var pedido = new Pedido {
-                UsuarioId = PedidoCreateDTO.UsuarioId,
+                UsuarioId = usuarioId,
                 MesaId = PedidoCreateDTO.MesaId,
                 DataHora = DateTime.Now,
                 Status = "RECEBIDO",
@@ -76,11 +86,12 @@ namespace APIGastroLink.Controllers {
                 }).ToList()
             };
 
-            pedido.ValorTotal = _pedidoService.CalcularValorTotal(pedido);
-
 
             try {
                 await _daoPedido.Insert(pedido);
+
+
+                pedido = (await _daoPedido.SelectById(pedido.Id)) as Pedido;
 
                 var pedidoResponse = new PedidoResponseDTO {
                     Id = pedido.Id,
@@ -94,7 +105,7 @@ namespace APIGastroLink.Controllers {
                     UsuarioId = pedido.UsuarioId,
                     ValorTotal = _pedidoService.CalcularValorTotal(pedido),
                     Itens = pedido.ItensPedido.Select(i => new ItemPedidoResponseDTO {
-                        Prato = new PratoDTO { 
+                        Prato = new PratoDTO {
                             Id = i.Prato.Id,
                             Nome = i.Prato.Nome,
                         },
@@ -103,7 +114,9 @@ namespace APIGastroLink.Controllers {
                     }).ToList()
                 };
 
-                return CreatedAtAction(nameof(GetPedido), new { pedidoId = pedido.Id }, pedidoResponse);
+                await _hubContext.Clients.All.SendAsync("NovoPedido", pedidoResponse);
+
+                return Ok(pedidoResponse);
 
 
             } catch (Exception ex) {

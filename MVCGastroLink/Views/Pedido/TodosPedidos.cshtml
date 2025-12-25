@@ -4,22 +4,87 @@
     ViewData["Title"] = "Todos os Pedidos";
 }
 
+<link rel="stylesheet" href="~/css/card-pedido.css" asp-append-version="true" />
+
+
 <h2>PRÓXIMOS PEDIDOS</h2>
 
-@{
-    foreach (var Pedido in Model) {
+<div id="pedidos-container" class="cards-container">
+    @foreach (var Pedido in Model) {
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">PEDIDO @Pedido.Id - @Pedido.DataHora</h5>
                 <h6 class="card-subtitle mb-2 text-muted">MESA @Pedido.Mesa.Numero</h6>
                 <ul class="list-group">
-                @{
-                    foreach(var itemPedido in Pedido.Itens){
-                        <li class="list-group-item">@itemPedido.Prato.Nome</li>
+                    @foreach (var itemPedido in Pedido.Itens) {
+                        <li class="list-group-item">@itemPedido.Prato.Nome - Qtde. @itemPedido.Quantidade</li>
                     }
-                }
                 </ul>
             </div>
         </div>
     }
-}
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+<script>
+    const token = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('access_token='))
+    ?.split('=')[1];
+
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("https://localhost:7071/pedidoHub", {
+            accessTokenFactory: () => {
+                return '@Context.Session.GetString("JWToken")';
+            }
+        })
+        .withAutomaticReconnect()
+        .build();
+
+    connection.start()
+        .then(() => console.log("Conectado ao SignalR Hub"))
+        .catch(err => console.error(err.toString()));
+
+    connection.on("NovoPedido", function (pedido) {
+        console.log("Novo pedido recebido:", pedido);
+        adicionarPedidoNaTela(pedido);
+    });
+
+    function adicionarPedidoNaTela(pedido) {
+        const container = document.getElementById("pedidos-container");
+
+        const card = document.createElement("div");
+        card.classList.add("card", "m-2");
+        card.style.width = "18rem";
+
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+
+        const title = document.createElement("h5");
+        title.classList.add("card-title");
+        title.textContent = `PEDIDO ${pedido.id} - ${new Date(pedido.dataHora).toLocaleString()}`;
+
+        const subtitle = document.createElement("h6");
+        subtitle.classList.add("card-subtitle", "mb-2", "text-muted");
+        subtitle.textContent = `MESA ${pedido.mesa.numero}`;
+
+        const ul = document.createElement("ul");
+        ul.classList.add("list-group");
+
+        pedido.itens.forEach(item => {
+            const li = document.createElement("li");
+            li.classList.add("list-group-item");
+            li.textContent = `${item.prato.nome} - Qtde. ${item.quantidade}`;
+            ul.appendChild(li);
+        });
+
+        cardBody.appendChild(title);
+        cardBody.appendChild(subtitle);
+        cardBody.appendChild(ul);
+        card.appendChild(cardBody);
+
+        container.prepend(card);
+    }
+
+</script>   

@@ -1,6 +1,7 @@
 using APIGastroLink.Context;
 using APIGastroLink.DAO;
 using APIGastroLink.DAO.Interface;
+using APIGastroLink.Hubs;
 using APIGastroLink.Services;
 using APIGastroLink.Services.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -35,6 +36,25 @@ builder.Services.AddAuthentication(options => {
         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(key)),
         ClockSkew = TimeSpan.FromSeconds(30)
     };
+    options.Events = new JwtBearerEvents {
+        OnMessageReceived = context => {
+            var accessToken = context.Request.Query["access_token"];
+            var path = context.HttpContext.Request.Path;
+            if (!string.IsNullOrEmpty(accessToken) && (path.StartsWithSegments("/pedidoHub"))) {
+                context.Token = accessToken;
+            }
+            return Task.CompletedTask;
+        }
+    };  
+});
+
+builder.Services.AddCors(options => {
+    options.AddPolicy("SignalRCors", policy => {
+        policy.WithOrigins("https://localhost:7059")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
 });
 
 // Add services to the container.
@@ -56,6 +76,8 @@ builder.Services.AddSingleton<ITokenService, TokenService>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.AddSignalR();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -64,10 +86,14 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+app.UseRouting();
 
+app.UseCors("SignalRCors");
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<PedidoHub>("/pedidoHub");
 
 app.Run();

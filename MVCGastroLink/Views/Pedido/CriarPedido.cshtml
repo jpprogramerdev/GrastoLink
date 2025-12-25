@@ -1,0 +1,84 @@
+﻿@model CriarPedidoViewlModel
+
+@{
+    ViewData["Title"] = "Criar Pedido";
+
+    if (TempData["FalhaCriarPedido"] != null){
+        <div class="alert alert-danger" role="alert">
+            @TempData["FalhaCriarPedido"]
+        </div>
+    }
+
+    if (TempData["SucessoCriarPedido"] != null) {
+        <div class="alert alert-success" role="alert">
+            @TempData["SucessoCriarPedido"]
+        </div>
+    }
+}
+
+<form asp-action="CriarPedido" method="post">
+
+    <!-- Mesa -->
+    <fieldset class="border rounded p-3 mb-4">
+        <legend class="float-none w-auto px-2">Mesa</legend>
+
+        <div class="mb-3">
+            <label class="form-label">Selecione a mesa</label>
+            <select class="form-control" asp-for="PedidoRequestDTO.MesaId">
+                @foreach (var mesa in Model.MesasDTO) {
+                    <option value="@mesa.Id">Mesa @mesa.Numero</option>
+                }
+            </select>
+        </div>
+    </fieldset>
+
+    <!-- Itens do Pedido -->
+    <fieldset class="border rounded p-3 mb-4">
+        <legend class="float-none w-auto px-2">Itens do Pedido</legend>
+
+        <div id="itens" class="mb-3"></div>
+
+        <div class="d-flex justify-content-start">
+            <button type="button" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" onclick="adicionarItemPedido()">
+                +
+            </button>
+        </div>
+    </fieldset>
+
+    <!-- Observações -->
+    <fieldset class="border rounded p-3 mb-4">
+        <legend class="float-none w-auto px-2">Observações</legend>
+
+        <div class="mb-3">
+            <input type="text" class="form-control" asp-for="PedidoRequestDTO.Observacoes" placeholder="Ex: Sem cebola, ponto da carne..." />
+        </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-success">
+        Gerar Pedido
+    </button>
+
+</form>
+
+
+<script src="~/js/adicionarItemPedido.js"></script>
+
+
+<template id="item-template">
+    <div class="border rounded p-2 mb-2">
+        <label class="form-label">Prato:</label>
+
+        <select class="form-control prato mb-2" required>
+            @foreach (var prato in Model.PratosDTO) {
+                <option value="@prato.Id">@prato.Nome</option>
+            }
+        </select>
+
+        <label class="form-label">Quantidade:</label>
+        <input type="number" class="form-control quantidade mb-2" value="1" min="1" />
+
+        <button type="button" class="btn btn-outline-danger btn-sm" onclick="this.parentElement.remove()">
+            Remover
+        </button>
+    </div>
+</template>

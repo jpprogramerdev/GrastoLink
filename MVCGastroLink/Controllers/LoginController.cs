@@ -34,8 +34,12 @@ namespace MVCGastroLink.Controllers {
             var response = await client.PostAsync("auth/login", content);
 
             if (response.IsSuccessStatusCode) {
+                var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDTO>();
+
                 var claims = new List<Claim> {
-                    new Claim(ClaimTypes.NameIdentifier, LoginRequestDTO.CPF)
+                    new Claim(ClaimTypes.NameIdentifier, loginResponse.Usuario.Id.ToString()),
+                    new Claim(ClaimTypes.Name, loginResponse.Usuario.Nome),
+                    new Claim(ClaimTypes.Role, loginResponse.Usuario.TipoUsuario)
                 };
 
                 var identity = new ClaimsIdentity(claims, "Cookies");
@@ -50,11 +54,7 @@ namespace MVCGastroLink.Controllers {
 
                 var token = jsonDoc.RootElement.GetProperty("token").GetString();
 
-                Response.Cookies.Append("jwt_token", token, new CookieOptions {
-                    HttpOnly = true,
-                    Secure = true,
-                    SameSite = SameSiteMode.Strict
-                });
+                HttpContext.Session.SetString("JWToken", token ?? string.Empty);
 
                 return RedirectToAction("TodosPedidos", "Pedido");
             } else {

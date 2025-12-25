@@ -22,7 +22,11 @@ builder.Services
         options.ExpireTimeSpan = TimeSpan.FromHours(2);
     });
 
-builder.Services.AddAuthorization();
+builder.Services.AddSession(options => {
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 builder.Services.AddAuthorization();
 
@@ -36,6 +40,7 @@ if (!app.Environment.IsDevelopment()) {
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 

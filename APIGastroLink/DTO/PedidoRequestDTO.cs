@@ -1,6 +1,5 @@
 ﻿namespace APIGastroLink.DTO {
-    public class PedidoCreateDTO {
-        public int UsuarioId { get; set; }
+    public class PedidoRequestDTO {
         public int MesaId { get; set; }
 
         public List<ItemPedidoCreateDTO> ItensPedido { get; set; }
