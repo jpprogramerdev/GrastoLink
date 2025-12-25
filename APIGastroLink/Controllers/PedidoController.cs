@@ -54,7 +54,8 @@ namespace APIGastroLink.Controllers {
                             Nome = i.Prato.Nome,
                         },
                         Quantidade = i.Quantidade,
-                        Status = i.Status
+                        Status = i.Status,
+                        Observacoes = string.IsNullOrEmpty(i.Observacoes) ? "" : i.Observacoes
                     }).ToList()
                 }).ToList();
 

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="~/css/card-pedido.css" asp-append-version="true" />
 
 
+
 <h2>PRÓXIMOS PEDIDOS</h2>
 
 <div id="pedidos-container" class="cards-container">
@@ -17,7 +18,13 @@
                 <h6 class="card-subtitle mb-2 text-muted">MESA @Pedido.Mesa.Numero</h6>
                 <ul class="list-group">
                     @foreach (var itemPedido in Pedido.Itens) {
-                        <li class="list-group-item">@itemPedido.Prato.Nome - Qtde. @itemPedido.Quantidade</li>
+                        <li class="list-group-item">
+                            <p>@itemPedido.Prato.Nome - Qtde. @itemPedido.Quantidade</p>
+
+                            @if(itemPedido.Observacoes != ""){
+                                <p>OBS: @itemPedido.Observacoes</p>
+                            }
+                        </li>
                     }
                 </ul>
             </div>
