@@ -8,6 +8,8 @@ function adicionarItemPedido() {
 
     clone.querySelector(".quantidade").setAttribute("name", `PedidoRequestDTO.ItensPedido[${index}].Quantidade`);
 
+    clone.querySelector(".observacao").setAttribute("name", `PedidoRequestDTO.ItensPedido[${index}].Observacoes`);
+
     document.getElementById('itens').appendChild(clone);
 
     index++;

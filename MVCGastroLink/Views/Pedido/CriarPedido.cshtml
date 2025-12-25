@@ -45,15 +45,6 @@
         </div>
     </fieldset>
 
-    <!-- Observações -->
-    <fieldset class="border rounded p-3 mb-4">
-        <legend class="float-none w-auto px-2">Observações</legend>
-
-        <div class="mb-3">
-            <input type="text" class="form-control" asp-for="PedidoRequestDTO.Observacoes" placeholder="Ex: Sem cebola, ponto da carne..." />
-        </div>
-    </fieldset>
-
     <button type="submit" class="btn btn-success">
         Gerar Pedido
     </button>
@@ -76,6 +67,9 @@
 
         <label class="form-label">Quantidade:</label>
         <input type="number" class="form-control quantidade mb-2" value="1" min="1" />
+
+        <label class="form-label">Observações:</label>
+        <input type="text" class="form-control observacao mb-2" placeholder="Ex.: Sem cebola" />
 
         <button type="button" class="btn btn-outline-danger btn-sm" onclick="this.parentElement.remove()">
             Remover
