@@ -46,41 +46,51 @@ namespace MVCGastroLink.Controllers {
 
             criarPedidoViewlModel.PedidoRequestDTO = new PedidoRequestDTO();
 
+            if (criarPedidoViewlModel.MesasDTO == null || criarPedidoViewlModel.PratosDTO == null) {
+                TempData["FalhaCriarPedido"] = "Erro ao carregar dados para criar pedido";
+                return RedirectToAction("TodosPedidos", "Pedido");
+            }
+
             return View(criarPedidoViewlModel);
         }
 
         [HttpPost]
         public async Task<IActionResult> CriarPedido(CriarPedidoViewlModel criarPedidoViewlModel) {
-            if (!ModelState.IsValid) {
-                TempData["FalhaCriarPedido"] = "Dados invalidos do pedido";
+            try {
+                if (!ModelState.IsValid) {
+                    TempData["FalhaCriarPedido"] = "Dados invalidos do pedido";
+                    return RedirectToAction("CriarPedido");
+                }
+
+                var token = HttpContext.Session.GetString("JWToken");
+
+                if (string.IsNullOrEmpty(token)) {
+                    TempData["FalhaCriarPedido"] = "Usuário não autenticado";
+                    return RedirectToAction("Login", "Login");
+                }
+
+                var client = _httpClientFactory.CreateClient("ApiGastroLink");
+
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var response = await client.PostAsJsonAsync("pedido", criarPedidoViewlModel.PedidoRequestDTO);
+
+                if (!response.IsSuccessStatusCode) {
+                    TempData["FalhaCriarPedido"] = "Erro ao criar pedido";
+                    return RedirectToAction("CriarPedido");
+                }
+
+                TempData["SucessoCriarPedido"] = "Pedido criado com sucesso!";
                 return RedirectToAction("CriarPedido");
+            } catch (NullReferenceException nllEx) {
+                TempData["FalhaCriarPedido"] = "Erro ao carregar dados para criar pedido";
+                return RedirectToAction("TodosPedidos", "Pedido");
             }
-
-            var token = HttpContext.Session.GetString("JWToken");
-
-            if (string.IsNullOrEmpty(token)) {
-                TempData["FalhaCriarPedido"] = "Usuário não autenticado";
-                return RedirectToAction("Login", "Login");
-            }
-
-            var client = _httpClientFactory.CreateClient("ApiGastroLink");
-
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            var response = await client.PostAsJsonAsync("pedido", criarPedidoViewlModel.PedidoRequestDTO);
-
-            if (!response.IsSuccessStatusCode) {
-                TempData["FalhaCriarPedido"] = "Erro ao criar pedido";
-                return RedirectToAction("CriarPedido");
-            }
-
-            TempData["SucessoCriarPedido"] = "Pedido criado com sucesso!";
-            return RedirectToAction("CriarPedido");
         }
 
         [HttpGet]
         public async Task<IActionResult> ExcluirPedido(int pedidoId) {
-            if(pedidoId == 0) {
+            if (pedidoId == 0) {
                 TempData["FalhaExclusaoPedido"] = "ID do pedido inválido";
                 return RedirectToAction("TodosPedidos");
             }
@@ -106,9 +116,9 @@ namespace MVCGastroLink.Controllers {
         public async Task<IActionResult> TodosPedidos() {
 
             var client = _httpClientFactory.CreateClient("ApiGastroLink");
-            
+
             var token = HttpContext.Session.GetString("JWToken");
-            
+
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await client.GetAsync("pedido/todos-aberto");
 

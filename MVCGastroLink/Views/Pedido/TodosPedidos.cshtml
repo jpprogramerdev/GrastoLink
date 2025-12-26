@@ -9,6 +9,12 @@
         </div>
     }
 
+    if (TempData["FalhaCriarPedido"] != null) {
+        <div class="alert alert-danger" role="alert">
+            @TempData["FalhaCriarPedido"]
+        </div>
+    }
+
     if (TempData["SucessoExclusaoPedido"] != null) {
         <div class="alert alert-success" role="alert">
             @TempData["SucessoExclusaoPedido"]
