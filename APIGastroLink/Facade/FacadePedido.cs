@@ -23,6 +23,32 @@ namespace APIGastroLink.Facade {
             _pedidoService = pedidoService;
             _pedidoMapper = pedidoMapper;
         }
+
+        public async Task ExcluirPedido(int pedidoId) {
+            var pedido = (await _daoPedido.SelectById(pedidoId)) as Pedido;
+
+            if (pedido == null) {
+                throw new Exception("Pedido nao encontrado.");
+            }
+
+            try {
+                await _daoPedido.Delete(pedido);
+
+                var mesa = (await _daoMesa.SelectById(pedido.MesaId)) as Mesa;
+
+                if (mesa != null) {
+                    mesa.Status = StatusMesa.LIVRE;
+
+                    await _daoMesa.Update(mesa);
+                } else {
+                    throw new Exception("Mesa nao encontrada. Por favor confirme o número da mesa");
+                }
+
+            } catch (Exception ex) {
+                throw new Exception($"Erro ao excluir pedido: {ex.Message}");
+            }
+        }
+
         public async Task<PedidoResponseDTO> SalvarPedido(PedidoRequestDTO dto, int usuarioId) {
             var pedidoEntity = _pedidoMapper.ToEntity(dto, usuarioId);
 

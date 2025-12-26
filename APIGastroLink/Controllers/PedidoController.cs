@@ -16,6 +16,7 @@ namespace APIGastroLink.Controllers {
     [Authorize]
     public class PedidoController : ControllerBase {
         private IDAOPedido _daoPedido;
+
         private IPedidoService _pedidoService;
         private readonly IHubContext<PedidoHub> _hubContext;
 
@@ -158,13 +159,8 @@ namespace APIGastroLink.Controllers {
         //DELETE api-gastrolink/pedido/{pedidoId}
         [HttpDelete("{pedidoId}")]
         public async Task<ActionResult> DeletePedido(int pedidoId) {
-            var pedido = (await _daoPedido.SelectById(pedidoId)) as Pedido;
-            if (pedido == null) {
-                return NotFound("Pedido nao encontrado.");
-            }
             try {
-                await _daoPedido.Delete(pedido);
-
+                await _facadePedido.ExcluirPedido(pedidoId);
                 return NoContent();
             } catch (Exception ex) {
                 return BadRequest($"Falha ao excluir o pedido: {ex.Message}");
