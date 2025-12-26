@@ -85,6 +85,7 @@
     connection.on("NovoPedido", function (pedido) {
         console.log("Novo pedido recebido:", pedido);
         adicionarPedidoNaTela(pedido);
+        atualizarTotalPedidos();
         tocarSomNovoPedido();
     });
 </script>   
@@ -103,4 +104,15 @@
             })
         }
     });
+</script>
+
+<script>
+    function atualizarTotalPedidos() {
+        const total = document.querySelectorAll("#pedidos-container .card").length;
+
+        const titulo = document.querySelector("h4");
+        if (!titulo) return;
+
+        titulo.textContent = `TOTAL DE PEDIDOS: ${total}`;
+    }
 </script>

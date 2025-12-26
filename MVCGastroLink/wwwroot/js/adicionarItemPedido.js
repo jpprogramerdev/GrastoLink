@@ -4,13 +4,31 @@ function adicionarItemPedido() {
     const template = document.getElementById('item-template');
     const clone = template.content.cloneNode(true);
 
-    clone.querySelector(".prato").setAttribute("name", `PedidoRequestDTO.ItensPedido[${index}].PratoId`);
+    const container = clone.querySelector("div");
 
-    clone.querySelector(".quantidade").setAttribute("name", `PedidoRequestDTO.ItensPedido[${index}].Quantidade`);
-
-    clone.querySelector(".observacao").setAttribute("name", `PedidoRequestDTO.ItensPedido[${index}].Observacoes`);
+    container.querySelector("button").onclick = function () {
+        container.remove();
+        reindexarItens();
+    };
 
     document.getElementById('itens').appendChild(clone);
 
-    index++;
+    reindexarItens();
+}
+
+function reindexarItens() {
+    const itens = document.querySelectorAll("#itens > div");
+
+    itens.forEach((item, i) => {
+        item.querySelector(".prato")
+            .setAttribute("name", `PedidoRequestDTO.ItensPedido[${i}].PratoId`);
+
+        item.querySelector(".quantidade")
+            .setAttribute("name", `PedidoRequestDTO.ItensPedido[${i}].Quantidade`);
+
+        item.querySelector(".observacao")
+            .setAttribute("name", `PedidoRequestDTO.ItensPedido[${i}].Observacoes`);
+    });
+
+    index = itens.length;
 }
