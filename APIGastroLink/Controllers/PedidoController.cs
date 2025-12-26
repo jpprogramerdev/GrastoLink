@@ -154,5 +154,21 @@ namespace APIGastroLink.Controllers {
                 return BadRequest($"Falha ao adicionar o item: {ex.Message}");
             }
         }
+
+        //DELETE api-gastrolink/pedido/{pedidoId}
+        [HttpDelete("{pedidoId}")]
+        public async Task<ActionResult> DeletePedido(int pedidoId) {
+            var pedido = (await _daoPedido.SelectById(pedidoId)) as Pedido;
+            if (pedido == null) {
+                return NotFound("Pedido nao encontrado.");
+            }
+            try {
+                await _daoPedido.Delete(pedido);
+
+                return NoContent();
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao excluir o pedido: {ex.Message}");
+            }
+        }
     }
 }

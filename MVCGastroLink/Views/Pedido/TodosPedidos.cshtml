@@ -2,6 +2,18 @@
 
 @{
     ViewData["Title"] = "Todos os Pedidos";
+
+    if (TempData["FalhaExclusaoPedido"] != null){
+        <div class="alert alert-danger" role="alert">
+            @TempData["FalhaExclusaoPedido"]
+        </div>
+    }
+
+    if (TempData["SucessoExclusaoPedido"] != null) {
+        <div class="alert alert-success" role="alert">
+            @TempData["SucessoExclusaoPedido"]
+        </div>
+    }
 }
 
 <link rel="stylesheet" href="~/css/card-pedido.css" asp-append-version="true" />
@@ -12,7 +24,7 @@
 
 <div id="pedidos-container" class="cards-container">
     @foreach (var Pedido in Model) {
-        <div class="card" style="width: 18rem;">
+        <div class="card" data-pedido-id="@Pedido.Id" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">PEDIDO @Pedido.Id - @Pedido.DataHora</h5>
                 <h6 class="card-subtitle mb-2 text-muted">MESA @Pedido.Mesa.Numero</h6>
@@ -27,6 +39,14 @@
                         </li>
                     }
                 </ul>
+                <div class="container-button">
+                    <a class="btn btn-outline-danger btn-sm" asp-route-pedidoId="@Pedido.Id" asp-action="ExcluirPedido" asp-controller="Pedido">
+                        Remover
+                    </a>
+                    <button type="button" class="btn btn-outline-info btn-sm" onclick="this.parentElement.remove()">
+                        Alterar Status
+                    </button>
+                </div>
             </div>
         </div>
     }

@@ -11,8 +11,10 @@ namespace APIGastroLink.DAO {
             _context = context;
         }
 
-        public Task Delete(EntidadeDominio entidadeDominio) {
-            throw new NotImplementedException();
+        public async Task Delete(EntidadeDominio entidadeDominio) {
+            _context.ItensPedido.RemoveRange(((Pedido)entidadeDominio).ItensPedido);
+            _context.Pedidos.Remove((Pedido)entidadeDominio);
+            await _context.SaveChangesAsync();
         }
 
         public async Task Insert(EntidadeDominio entidadeDominio) {

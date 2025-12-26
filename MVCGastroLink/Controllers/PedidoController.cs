@@ -78,18 +78,42 @@ namespace MVCGastroLink.Controllers {
             return RedirectToAction("CriarPedido");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ExcluirPedido(int pedidoId) {
+            if(pedidoId == 0) {
+                TempData["FalhaExclusaoPedido"] = "ID do pedido inválido";
+                return RedirectToAction("TodosPedidos");
+            }
+
+            var client = _httpClientFactory.CreateClient("ApiGastroLink");
+
+            var token = HttpContext.Session.GetString("JWToken");
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await client.DeleteAsync($"pedido/{pedidoId}");
+
+            if (!response.IsSuccessStatusCode) {
+                TempData["FalhaExclusaoPedido"] = "Erro ao excluir pedido";
+                return RedirectToAction("TodosPedidos");
+            }
+
+            TempData["SucessoExclusaoPedido"] = "Pedido excluído com sucesso!";
+
+            return RedirectToAction("TodosPedidos");
+        }
+
         public async Task<IActionResult> TodosPedidos() {
 
             var client = _httpClientFactory.CreateClient("ApiGastroLink");
             
             var token = HttpContext.Session.GetString("JWToken");
             
-            client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await client.GetAsync("pedido/todos-aberto");
 
             if (!response.IsSuccessStatusCode) {
-                ViewData["FalhaBuscaTodoPedidos"] = "Erro ao buscar pedidos";
+                TempData["FalhaBuscaTodoPedidos"] = "Erro ao buscar pedidos";
                 return View(new List<PedidoResponseDTO>());
             }
 
