@@ -25,7 +25,7 @@ namespace APIGastroLink.Controllers {
                 return BadRequest(new MessagemResponseDTO { Mensagem = "Dados de login inválidos" });
             }
 
-            var usuario = (Usuario)(await _daoUsuario.Authenticate(Login.CPF, Login.Senha));
+            var usuario = (await _daoUsuario.Authenticate(Login.CPF, Login.Senha)) as Usuario;
             if (usuario == null) {
                 return Unauthorized(new MessagemResponseDTO { Mensagem = "CPF e/ou senha incorretos" });
             }

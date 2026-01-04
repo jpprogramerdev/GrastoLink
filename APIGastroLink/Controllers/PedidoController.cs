@@ -166,5 +166,16 @@ namespace APIGastroLink.Controllers {
                 return BadRequest($"Falha ao excluir o pedido: {ex.Message}");
             }
         }
+
+       //PUT api-gastrolink/pedido/{pedidoId}/finalizar
+        [HttpPut("{pedidoId}/finalizar")]
+        public async Task<ActionResult> FinalizarPedido(int pedidoId) {
+            try {
+                await _facadePedido.FinalizarPedido(pedidoId);
+                return NoContent();
+            } catch (Exception ex) {
+                return BadRequest($"Falha ao finalizar o pedido: {ex.Message}");
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MVCGastroLink.DTO;
 using System.Security.Claims;
@@ -12,6 +13,7 @@ namespace MVCGastroLink.Controllers {
             _httpClientFactory = httpClientFactory;
         }
 
+        [AllowAnonymous]
         public IActionResult Login() {
             return View();
         }
@@ -46,7 +48,10 @@ namespace MVCGastroLink.Controllers {
 
                 var principal = new ClaimsPrincipal(identity);
 
-                await HttpContext.SignInAsync("Cookies", principal);
+                await HttpContext.SignInAsync("Cookies", principal, new AuthenticationProperties {
+                    IsPersistent = true,
+                    ExpiresUtc = DateTimeOffset.UtcNow.AddHours(2)
+                });
 
                 var responseContent = await response.Content.ReadAsStringAsync();
 

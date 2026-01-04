@@ -113,6 +113,25 @@ namespace MVCGastroLink.Controllers {
             return RedirectToAction("TodosPedidos");
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> FinalizarPedido(int pedidoId) {
+            if (pedidoId == 0) {
+                TempData["FalhaDetalhesPedido"] = "ID do pedido inválido";
+                return RedirectToAction("TodosPedidos");
+            }
+            var client = _httpClientFactory.CreateClient("ApiGastroLink");
+            var token = HttpContext.Session.GetString("JWToken");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await client.PutAsync($"pedido/{pedidoId}/finalizar",null);
+
+            if (!response.IsSuccessStatusCode) {
+                TempData["FalhaDetalhesPedido"] = "Erro ao buscar detalhes do pedido";
+                return RedirectToAction("TodosPedidos");
+            }
+            return RedirectToAction("TodosPedidos");
+        }
+
         public async Task<IActionResult> TodosPedidos() {
 
             var client = _httpClientFactory.CreateClient("ApiGastroLink");

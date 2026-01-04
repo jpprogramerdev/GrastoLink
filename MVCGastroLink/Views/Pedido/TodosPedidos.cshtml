@@ -24,8 +24,6 @@
 
 <link rel="stylesheet" href="~/css/card-pedido.css" asp-append-version="true" />
 
-
-
 <h4>TOTAL DE PEDIDOS: @Model.Count()</h4>
 
 <div id="pedidos-container" class="cards-container">
@@ -49,9 +47,9 @@
                     <a class="btn btn-outline-danger btn-sm" asp-route-pedidoId="@Pedido.Id" asp-action="ExcluirPedido" asp-controller="Pedido">
                         Remover
                     </a>
-                    <button type="button" class="btn btn-outline-info btn-sm" onclick="this.parentElement.remove()">
-                        Alterar Status
-                    </button>
+                    <a class="btn btn-outline-info btn-sm" asp-route-pedidoId="@Pedido.Id" asp-action="FinalizarPedido" asp-controller="Pedido">
+                        Finalizar
+                    </a>
                 </div>
             </div>
         </div>

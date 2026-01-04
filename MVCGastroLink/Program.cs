@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using MVCGastroLink.Handlers;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,13 +16,26 @@ builder.Services.AddHttpClient("ApiGastroLink", client => {
 })
 .AddHttpMessageHandler<JwtHandler>();
 
-builder.Services
-    .AddAuthentication("Cookies")
-    .AddCookie("Cookies", options => {
-        options.LoginPath = "/Login/Login";
-        options.AccessDeniedPath = "/Login/Login";
-        options.ExpireTimeSpan = TimeSpan.FromHours(2);
-    });
+builder.Services.AddControllersWithViews(options => {
+    var policy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+    
+    options.Filters.Add(new AuthorizeFilter(policy));
+});
+
+
+builder.Services.AddAuthentication(options => {
+    options.DefaultAuthenticateScheme = "Cookies";
+    options.DefaultSignInScheme = "Cookies";
+    options.DefaultChallengeScheme = "Cookies";
+})
+.AddCookie("Cookies", options => {
+    options.LoginPath = "/Login/Login";
+    options.AccessDeniedPath = "/Login/Login";
+    options.ExpireTimeSpan = TimeSpan.FromHours(2);
+    options.SlidingExpiration = true;
+});
 
 builder.Services.AddSession(options => {
     options.IdleTimeout = TimeSpan.FromMinutes(30);

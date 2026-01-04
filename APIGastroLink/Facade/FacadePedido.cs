@@ -49,6 +49,20 @@ namespace APIGastroLink.Facade {
             }
         }
 
+        public async Task FinalizarPedido(int pedidoId) {
+            var pedido = await _daoPedido.SelectById(pedidoId) as Pedido;
+
+            if (pedido == null) {
+                throw new Exception("Pedido nao encontrado.");
+            }
+
+            try {
+                await _daoPedido.Update(pedido);
+            } catch (Exception ex) {
+                throw new Exception($"Erro ao finalizar pedido: {ex.Message}");
+            }
+        }
+
         public async Task<PedidoResponseDTO> SalvarPedido(PedidoRequestDTO dto, int usuarioId) {
             var pedidoEntity = _pedidoMapper.ToEntity(dto, usuarioId);
 

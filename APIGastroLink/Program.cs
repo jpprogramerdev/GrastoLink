@@ -62,6 +62,10 @@ builder.Services.AddCors(options => {
 });
 
 // Add services to the container.
+builder.Services.AddScoped<IDAODatabase, DAOSqlServer>();
+
+builder.Services.AddTransient<IDAODatabase, DAOSqlServer>();
+
 builder.Services.AddTransient<IDAOUsuario, DAOUsuario>();
 builder.Services.AddTransient<IDAOMesa, DAOMesa>();
 builder.Services.AddTransient<IDAOCategoriaPrato, DAOCategoriaPrato>();
@@ -75,11 +79,14 @@ builder.Services.AddTransient<IPedidoMapper, PedidoMapper>();
 
 builder.Services.AddScoped<IFacadePedido, FacadePedido>();
 
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection"),
+    sqlServerOptions => sqlServerOptions.CommandTimeout(90)
+    ));
 
 builder.Services.AddControllers();
 
-builder.Services.AddSingleton<ITokenService, TokenService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
