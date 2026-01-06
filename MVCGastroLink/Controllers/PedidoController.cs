@@ -15,6 +15,7 @@ namespace MVCGastroLink.Controllers {
             _httpClientFactory = httpClientFactory;
         }
 
+        [Authorize(Roles = "GARÇOM")]
         public async Task<IActionResult> CriarPedido() {
 
             var criarPedidoViewlModel = new CriarPedidoViewlModel();
@@ -132,6 +133,7 @@ namespace MVCGastroLink.Controllers {
             return RedirectToAction("TodosPedidos");
         }
 
+        [Authorize(Roles = "COZINHEIRO")]
         public async Task<IActionResult> TodosPedidos() {
 
             var client = _httpClientFactory.CreateClient("ApiGastroLink");

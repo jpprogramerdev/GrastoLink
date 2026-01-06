@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Projetos\\GastroLink\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\views\\pedido\\todospedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\views\\pedido\\todospedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\views\\pedido\\criarpedido.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\views\\pedido\\criarpedido.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\handlers\\authorizationresulthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\handlers\\authorizationresulthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,50 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|c:\\projetos\\gastrolink\\mvcgastrolink\\views\\pedido\\todospedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5CF59E9-ABC3-4FED-B963-F329F74CFE45}|MVCGastroLink\\MVCGastroLink.csproj|solutionrelative:mvcgastrolink\\views\\pedido\\todospedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\facade\\interface\\ifacadepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\facade\\interface\\ifacadepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\facade\\facadepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\facade\\facadepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\daopedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\daopedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\dao\\daosqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\dao\\daosqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\tipousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\tipousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|c:\\projetos\\gastrolink\\apigastrolink\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97873CFB-6DC6-43AB-8412-1F0709653673}|APIGastroLink\\APIGastroLink.csproj|solutionrelative:apigastrolink\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 181,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,180 +50,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "MVCGastroLink\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "MVCGastroLink\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowDgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T20:12:19.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Program.cs",
-              "RelativeDocumentMoniker": "MVCGastroLink\\Program.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Program.cs",
-              "RelativeToolTip": "MVCGastroLink\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T20:08:07.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "TodosPedidos.cshtml",
               "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml",
               "RelativeDocumentMoniker": "MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml",
-              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml",
-              "RelativeToolTip": "MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAVAAAAAAAAAA==",
+              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml*",
+              "RelativeToolTip": "MVCGastroLink\\Views\\Pedido\\TodosPedidos.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-04T19:31:32.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FacadePedido.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Facade\\FacadePedido.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Facade\\FacadePedido.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Facade\\FacadePedido.cs",
-              "RelativeToolTip": "APIGastroLink\\Facade\\FacadePedido.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowDoAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T19:27:15.42Z",
+              "WhenOpened": "2026-01-06T14:12:18.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IFacadePedido.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Facade\\Interface\\IFacadePedido.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Facade\\Interface\\IFacadePedido.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Facade\\Interface\\IFacadePedido.cs",
-              "RelativeToolTip": "APIGastroLink\\Facade\\Interface\\IFacadePedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "AuthorizationResultHandler.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Handlers\\AuthorizationResultHandler.cs",
+              "RelativeDocumentMoniker": "MVCGastroLink\\Handlers\\AuthorizationResultHandler.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Handlers\\AuthorizationResultHandler.cs",
+              "RelativeToolTip": "MVCGastroLink\\Handlers\\AuthorizationResultHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T19:27:14.696Z",
+              "WhenOpened": "2026-01-06T13:39:11.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PedidoController.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Controllers\\PedidoController.cs",
-              "RelativeDocumentMoniker": "MVCGastroLink\\Controllers\\PedidoController.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Controllers\\PedidoController.cs",
-              "RelativeToolTip": "MVCGastroLink\\Controllers\\PedidoController.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAQwKEAAAAAAAAAAAAAAA==",
+              "Title": "CriarPedido.cshtml",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Pedido\\CriarPedido.cshtml",
+              "RelativeDocumentMoniker": "MVCGastroLink\\Views\\Pedido\\CriarPedido.cshtml",
+              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Pedido\\CriarPedido.cshtml",
+              "RelativeToolTip": "MVCGastroLink\\Views\\Pedido\\CriarPedido.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-06T12:23:29.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Program.cs",
+              "RelativeDocumentMoniker": "MVCGastroLink\\Program.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Program.cs",
+              "RelativeToolTip": "MVCGastroLink\\Program.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAowEgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T19:26:21.287Z",
+              "WhenOpened": "2026-01-06T12:15:27.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "MVCGastroLink\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "MVCGastroLink\\Views\\Login\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-06T11:24:20.023Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "MVCGastroLink\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "MVCGastroLink\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAewDcAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T11:23:44.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "PedidoController.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PedidoController.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\PedidoController.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\PedidoController.cs",
-              "RelativeToolTip": "APIGastroLink\\Controllers\\PedidoController.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAcwK8AAAAeAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "MVCGastroLink\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Projetos\\GastroLink\\MVCGastroLink\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "MVCGastroLink\\Controllers\\PedidoController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvx4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T22:11:23.043Z",
+              "WhenOpened": "2026-01-06T11:19:05.96Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DAOPedido.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPedido.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOPedido.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOPedido.cs",
-              "RelativeToolTip": "APIGastroLink\\DAO\\DAOPedido.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAIwHAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-29T11:18:09.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TipoUsuario.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\TipoUsuario.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\TipoUsuario.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\TipoUsuario.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\TipoUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T23:38:32.529Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Models\\Usuario.cs",
-              "RelativeToolTip": "APIGastroLink\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T23:38:29.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "APIGastroLink\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAewBYAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T23:36:26.627Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "APIGastroLink\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAcwEUAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T23:36:09.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\Context\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\Context\\AppDbContext.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\Context\\AppDbContext.cs",
-              "RelativeToolTip": "APIGastroLink\\Context\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T23:08:50.603Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DAOSqlServer.cs",
-              "DocumentMoniker": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOSqlServer.cs",
-              "RelativeDocumentMoniker": "APIGastroLink\\DAO\\DAOSqlServer.cs",
-              "ToolTip": "C:\\Projetos\\GastroLink\\APIGastroLink\\DAO\\DAOSqlServer.cs",
-              "RelativeToolTip": "APIGastroLink\\DAO\\DAOSqlServer.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAewBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T23:08:09.626Z"
             }
           ]
         }

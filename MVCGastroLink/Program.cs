@@ -1,7 +1,8 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using MVCGastroLink.Handlers;
 using System.Net.Http.Headers;
-using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,7 @@ builder.Services.AddControllersWithViews(options => {
     options.Filters.Add(new AuthorizeFilter(policy));
 });
 
+builder.Services.AddSingleton<IAuthorizationMiddlewareResultHandler, AuthorizationResultHandler>();
 
 builder.Services.AddAuthentication(options => {
     options.DefaultAuthenticateScheme = "Cookies";
@@ -32,9 +34,15 @@ builder.Services.AddAuthentication(options => {
 })
 .AddCookie("Cookies", options => {
     options.LoginPath = "/Login/Login";
-    options.AccessDeniedPath = "/Login/Login";
     options.ExpireTimeSpan = TimeSpan.FromHours(2);
     options.SlidingExpiration = true;
+
+    options.Events = new CookieAuthenticationEvents {
+        OnRedirectToAccessDenied = context => {
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+            return Task.CompletedTask;
+        }
+    };
 });
 
 builder.Services.AddSession(options => {
@@ -42,6 +50,7 @@ builder.Services.AddSession(options => {
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
 
 builder.Services.AddAuthorization();
 
@@ -52,14 +61,47 @@ if (!app.Environment.IsDevelopment()) {
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
 
 app.UseSession();
+
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapStaticAssets();
+app.Use(async (context, next) => {
+    await next();
+
+    if (context.Request.Method == "GET" && context.Response.StatusCode == StatusCodes.Status200OK && context.User.Identity?.IsAuthenticated == true) {
+        var path = context.Request.Path + context.Request.QueryString;
+
+        if (!path.StartsWith("/Login") && !path.StartsWith("/Erro") && !path.StartsWith("/Account") &&
+            !path.StartsWith("/css") && !path.StartsWith("/js") && !path.StartsWith("/lib")) {
+            context.Session.SetString("UltimaUrlValida", path);
+        }
+    }
+});
+
+
+app.UseStatusCodePages(async context => {
+    var response = context.HttpContext.Response;
+
+    if (response.StatusCode == StatusCodes.Status403Forbidden) {
+        var session = context.HttpContext.Session;
+
+        session.SetString(
+            "AcessoNegado",
+            "Acesso negado. Você não tem permissão para acessar esta funcionalidade."
+        );
+
+        var ultimaUrl = session.GetString("UltimaUrlValida");
+
+        response.Redirect(!string.IsNullOrEmpty(ultimaUrl) ? ultimaUrl : "/Login/Login");
+    }
+});
 
 app.MapControllerRoute(
     name: "default",

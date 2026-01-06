@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var tipoUsuario = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -19,12 +23,17 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="TodosPedidos">Todos os Pedidos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="CriarPedido">Criar Pedido</a>
-                        </li>
+                        @if (tipoUsuario == "COZINHEIRO") {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="TodosPedidos">Todos os Pedidos</a>
+                            </li>
+                        }
+                        
+                        @if (tipoUsuario == "GARÇOM") {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="CriarPedido">Criar Pedido</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

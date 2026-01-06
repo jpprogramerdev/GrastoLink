@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text.Json;
 
 namespace MVCGastroLink.Controllers {
+    [AllowAnonymous]
     public class LoginController : Controller {
         private readonly IHttpClientFactory _httpClientFactory;
 
@@ -13,7 +14,6 @@ namespace MVCGastroLink.Controllers {
             _httpClientFactory = httpClientFactory;
         }
 
-        [AllowAnonymous]
         public IActionResult Login() {
             return View();
         }
@@ -61,9 +61,15 @@ namespace MVCGastroLink.Controllers {
 
                 HttpContext.Session.SetString("JWToken", token ?? string.Empty);
 
-                return RedirectToAction("TodosPedidos", "Pedido");
+                if (User.IsInRole("COZINHEIRO")) { 
+                    return RedirectToAction("TodosPedidos", "Pedido");
+                }
+
+                return RedirectToAction("CriarPedido", "Pedido");
+
+
             } else {
-                ModelState.AddModelError(string.Empty, "CPF ou senha inválidos.");
+                TempData["FalhaLogin"] = "CPF ou senha inválidos.";
                 return View(LoginRequestDTO);
             }
         }

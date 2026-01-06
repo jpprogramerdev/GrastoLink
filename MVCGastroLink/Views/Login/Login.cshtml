@@ -3,10 +3,21 @@
 @{
     ViewData["Title"] = "Login";
     Layout = "_LayoutLogin";
+    
+ 
+
 }
+
 
 <div class="container d-flex align-items-center justify-content-center vh-100">
     <div class="card shadow-lg p-4" style="max-width: 420px; width: 100%;">
+
+        @if (TempData["FalhaLogin"] != null) {
+            <div class="alert alert-danger" role="alert">
+                @TempData["FalhaLogin"]
+            </div>
+        }
+
         <h3 class="text-center mb-4">Acessar Conta</h3>
 
         <form asp-action="Login" asp-controller="Login" method="post">
