@@ -1,0 +1,121 @@
+﻿@model IEnumerable<PedidoResponseDTO>
+
+@{
+    ViewData["Title"] = "Todos os Pedidos";
+
+    if (TempData["FalhaExclusaoPedido"] != null) {
+        <div class="alert alert-danger" role="alert">
+            @TempData["FalhaExclusaoPedido"]
+        </div>
+    }
+
+    if (TempData["FalhaCriarPedido"] != null) {
+        <div class="alert alert-danger" role="alert">
+            @TempData["FalhaCriarPedido"]
+        </div>
+    }
+
+    if (TempData["SucessoExclusaoPedido"] != null) {
+        <div class="alert alert-success" role="alert">
+            @TempData["SucessoExclusaoPedido"]
+        </div>
+    }
+
+    @if (Context.Session.GetString("AcessoNegado") != null) {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @Context.Session.GetString("AcessoNegado")
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+}
+
+<link rel="stylesheet" href="~/css/card-pedido.css" asp-append-version="true" />
+
+<h4>TOTAL DE PEDIDOS: @Model.Count()</h4>
+
+<div id="pedidos-container" class="cards-container">
+    @foreach (var Pedido in Model) {
+        <div class="card" data-pedido-id="@Pedido.Id" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">PEDIDO @Pedido.Id - @Pedido.DataHora</h5>
+                <h6 class="card-subtitle mb-2 text-muted">MESA @Pedido.Mesa.Numero</h6>
+                <ul class="list-group">
+                    @foreach (var itemPedido in Pedido.Itens) {
+                        <li class="list-group-item">
+                            <p>@itemPedido.Prato.Nome - Qtde. @itemPedido.Quantidade</p>
+
+                            @if (itemPedido.Observacoes != "") {
+                                <p>OBS: @itemPedido.Observacoes</p>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+
+<audio id="pedidoNovoSound" preload="auto">
+    <source src="~/sounds/pedido-novo.mp3" type="audio/mpeg">
+</audio>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+<script src="~/js/adicionarPedidoNaTela.js"></script>
+<script src="~/js/tocarSomPedidoNovo.js"></script>
+
+
+<!--Script SignalR-->
+<script>
+    const token = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('access_token='))
+    ?.split('=')[1];
+
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("https://localhost:7071/pedidoHub", {
+            accessTokenFactory: () => {
+                return '@Context.Session.GetString("JWToken")';
+            }
+        })
+        .withAutomaticReconnect()
+        .build();
+
+    connection.start()
+        .then(() => console.log("Conectado ao SignalR Hub"))
+        .catch(err => console.error(err.toString()));
+
+    connection.on("NovoPedidoFinalizado", function (pedido) {
+        console.log("Novo pedido recebido:", pedido);
+        adicionarPedidoNaTela(pedido);
+        atualizarTotalPedidos();
+        tocarSomNovoPedido();
+    });
+</script>
+
+<!--Scrip tocar som-->
+<script>
+    let audioLiberado = false;
+
+    document.addEventListener('click', () => {
+        if(!audioLiberado){
+            const audio = document.getElementById('pedidoNovoSound');
+            audio.play().then(() => {
+                audio.pause();
+                audio.currentTime = 0;
+                audioLiberado = true;
+            })
+        }
+    });
+</script>
+
+<script>
+    function atualizarTotalPedidos() {
+        const total = document.querySelectorAll("#pedidos-container .card").length;
+
+        const titulo = document.querySelector("h4");
+        if (!titulo) return;
+
+        titulo.textContent = `TOTAL DE PEDIDOS: ${total}`;
+    }
+</script>
