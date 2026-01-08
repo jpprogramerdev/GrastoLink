@@ -66,6 +66,44 @@ namespace APIGastroLink.Controllers {
             }
         }
 
+        //GET api-gastrolink/pedido/todos-finalizado
+        [HttpGet("todos-finalizado")]
+        public async Task<ActionResult<IEnumerable<PedidoResponseDTO>>> GetPedidosFinalizados() {
+            try {
+                var pedidos = (await _daoPedido.SelectAll()).Cast<Pedido>().Where(p => p.Status == "FINALIZADO").ToList();
+
+                if (pedidos == null || pedidos.Count == 0) {
+                    return Ok("Nenhum pedido aberto encontrado.");
+                }
+
+                var pedidosResponse = pedidos.Select(p => new PedidoResponseDTO {
+                    Id = p.Id,
+                    DataHora = p.DataHora,
+                    Status = p.Status,
+                    Mesa = new MesaDTO {
+                        Id = p.Mesa.Id,
+                        Numero = p.Mesa.Numero,
+                        Status = p.Mesa.Status.ToString()
+                    },
+                    UsuarioId = p.UsuarioId,
+                    ValorTotal = _pedidoService.CalcularValorTotal(p),
+                    Itens = p.ItensPedido.Select(i => new ItemPedidoResponseDTO {
+                        Prato = new PratoDTO {
+                            Nome = i.Prato.Nome,
+                        },
+                        Quantidade = i.Quantidade,
+                        Status = i.Status,
+                        Observacoes = string.IsNullOrEmpty(i.Observacoes) ? "" : i.Observacoes
+                    }).ToList()
+                }).ToList();
+
+                return Ok(pedidosResponse);
+            } catch (Exception ex) {
+                return BadRequest($"Erro ao recuperar pedidos: {ex.Message}");
+            }
+        }
+
+
         //POST api-gastrolink/pedido
         [HttpPost]
         public async Task<ActionResult<PedidoResponseDTO>> PostPedido([FromBody] PedidoRequestDTO PedidoCreateDTO) {
@@ -172,6 +210,11 @@ namespace APIGastroLink.Controllers {
         public async Task<ActionResult> FinalizarPedido(int pedidoId) {
             try {
                 await _facadePedido.FinalizarPedido(pedidoId);
+
+                var pedidoResponse = _facadePedido.PegarPedidoPorId(pedidoId).Result;
+
+                await _hubContext.Clients.All.SendAsync("NovoPedidoFinalizado", pedidoResponse);
+
                 return NoContent();
             } catch (Exception ex) {
                 return BadRequest($"Falha ao finalizar o pedido: {ex.Message}");

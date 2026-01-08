@@ -61,11 +61,13 @@ namespace MVCGastroLink.Controllers {
 
                 HttpContext.Session.SetString("JWToken", token ?? string.Empty);
 
-                if (User.IsInRole("COZINHEIRO")) { 
+                if (User.IsInRole("COZINHEIRO")) {
                     return RedirectToAction("TodosPedidos", "Pedido");
+                } else if (User.IsInRole("CAIXA")) {
+                    return RedirectToAction("Caixa", "Caixa");
                 }
 
-                return RedirectToAction("CriarPedido", "Pedido");
+                    return RedirectToAction("CriarPedido", "Pedido");
 
 
             } else {

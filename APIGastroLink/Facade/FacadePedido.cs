@@ -49,6 +49,14 @@ namespace APIGastroLink.Facade {
             }
         }
 
+        public async Task<PedidoResponseDTO> PegarPedidoPorId(int pedidoId) {
+            var pedido = await _daoPedido.SelectById(pedidoId) as Pedido;
+            if (pedido == null) {
+                throw new Exception("Pedido nao encontrado.");
+            }
+            return _pedidoMapper.ToDTO(pedido);
+        }
+
         public async Task FinalizarPedido(int pedidoId) {
             var pedido = await _daoPedido.SelectById(pedidoId) as Pedido;
 

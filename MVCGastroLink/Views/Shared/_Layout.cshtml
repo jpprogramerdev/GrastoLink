@@ -34,6 +34,12 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="CriarPedido">Criar Pedido</a>
                             </li>
                         }
+
+                        @if (tipoUsuario == "CAIXA") {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Caixa" asp-action="Caixa">Caixa</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

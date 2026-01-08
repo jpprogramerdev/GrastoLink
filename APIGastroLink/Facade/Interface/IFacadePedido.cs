@@ -6,5 +6,6 @@ namespace APIGastroLink.Facade.Interface {
         Task<PedidoResponseDTO> SalvarPedido(PedidoRequestDTO dto, int usuarioId);
         Task ExcluirPedido(int pedidoId);
         Task FinalizarPedido(int pedidoId);
+        Task<PedidoResponseDTO> PegarPedidoPorId(int pedidoId); 
     }
 }
