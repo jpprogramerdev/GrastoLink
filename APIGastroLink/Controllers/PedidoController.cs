@@ -151,6 +151,7 @@ namespace APIGastroLink.Controllers {
                     Prato = new PratoDTO {
                         Id = i.Prato.Id,
                         Nome = i.Prato.Nome,
+                        Preco = i.Prato.Preco
                     },
                     Quantidade = i.Quantidade,
                     Status = i.Status

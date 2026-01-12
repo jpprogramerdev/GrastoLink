@@ -2,6 +2,12 @@
 
 @{
     ViewData["Title"] = "Todos Pedidos";
+
+    if (TempData["SucessoGerarPagamento"] != null){
+        <div class="alert alert-success" role="alert">
+            @TempData["SucessoGerarPagamento"]
+        </div>
+    }
 }
 
 <table class="table">
@@ -11,19 +17,24 @@
             <th scope="col">QTD. ITENS</th>
             <th scope="col">VALOR</th>
             <th scope="col">MESA</th>
+            <th scope="col">AÇÕES</th>
         </tr>
     </thead>
     <tbody id="tbody-pedidos">
-        @foreach(var pedidoItem in Model){
+        @foreach(var pedido in Model){
             <tr>
-                <th scope="row">@pedidoItem.Id</th>
-                <td>@pedidoItem.Itens.Count()</td>
-                <td>R$ @pedidoItem.ValorTotal.ToString("F2")</td>
-                <td>@pedidoItem.Mesa.Numero</td>
+                <th scope="row">@pedido.Id</th>
+                <td>@pedido.Itens.Count()</td>
+                <td>R$ @pedido.ValorTotal.ToString("F2")</td>
+                <td>@pedido.Mesa.Numero</td>
+                <td>
+                    <a asp-area="" asp-controller="Pedido" asp-action="DetalhesPedido" asp-route-pedidoId="@pedido.Id"><i class="bi bi-info-circle"></i></a>
+                    <a asp-area="" asp-controller="Caixa" asp-action="Pagamento" asp-route-pedidoId="@pedido.Id"><i class="bi bi-currency-dollar"></i></a>
+                </td>
             </tr>
         }
     </tbody>
-</table>
+</table> 
 
 
 <audio id="pedidoNovoSound" preload="auto">

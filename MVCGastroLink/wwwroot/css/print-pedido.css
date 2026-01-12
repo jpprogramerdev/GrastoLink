@@ -1,0 +1,28 @@
+﻿@media print {
+
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    #area-impressao,
+    #area-impressao * {
+        visibility: visible;
+    }
+
+    #area-impressao {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    /* Não imprimir botões */
+    button {
+        display: none;
+    }
+}

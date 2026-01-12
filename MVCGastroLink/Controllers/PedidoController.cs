@@ -124,7 +124,7 @@ namespace MVCGastroLink.Controllers {
             var client = _httpClientFactory.CreateClient("ApiGastroLink");
             var token = HttpContext.Session.GetString("JWToken");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            var response = await client.PutAsync($"pedido/{pedidoId}/finalizar",null);
+            var response = await client.PutAsync($"pedido/{pedidoId}/finalizar", null);
 
             if (!response.IsSuccessStatusCode) {
                 TempData["FalhaDetalhesPedido"] = "Erro ao buscar detalhes do pedido";
@@ -185,6 +185,28 @@ namespace MVCGastroLink.Controllers {
             }
 
             return View(pedidos);
+        }
+
+        [Authorize(Roles = "CAIXA,GARÇOM")]
+        [HttpGet]
+        public async Task<IActionResult> DetalhesPedido(int pedidoId) {
+            if (pedidoId == 0) {
+                TempData["FalhaDetalhesPedido"] = "ID do pedido inválido";
+                return RedirectToAction("TodosPedidos");
+            }
+
+            var client = _httpClientFactory.CreateClient("ApiGastroLink");
+            var token = HttpContext.Session.GetString("JWToken");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await client.GetAsync($"pedido/{pedidoId}");
+
+            if (!response.IsSuccessStatusCode) {
+                TempData["FalhaDetalhesPedido"] = "Erro ao buscar detalhes do pedido";
+                return RedirectToAction("TodosPedidos");
+            }
+
+            var pedidoDetalhes = await response.Content.ReadFromJsonAsync<PedidoResponseDTO>();
+            return View(pedidoDetalhes);
         }
     }
 }

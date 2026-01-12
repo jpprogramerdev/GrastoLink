@@ -43,7 +43,6 @@ namespace APIGastroLink.DAO {
                     using (var reader = cmd.ExecuteReader()) {
                         while (reader.Read()) { 
                             var pedido = new Pedido();
-                            var usuario = new Usuario();
 
                             pedido.Id = reader.GetInt32(reader.GetOrdinal("PED_ID"));
 
@@ -92,13 +91,58 @@ namespace APIGastroLink.DAO {
         }
 
 
-        public async Task<EntidadeDominio> SelectById(int id) => await _context.Pedidos
-            .Include(p => p.ItensPedido)
-                .ThenInclude(i => i.Prato)
-            .Include(p => p.Mesa)
-            .Include(p => p.Usuario)
-            .AsNoTracking()
-            .SingleOrDefaultAsync(p => p.Id == id);
+        public async Task<EntidadeDominio> SelectById(int id) {
+            string selectSql = "SELECT * FROM VW_PEDIDOS_COMPLETO WHERE PED_ID = @Id;";
+
+            var pedido = new Pedido();
+            Dictionary<int, Pedido> pedidoDict = new Dictionary<int, Pedido>();
+
+            using (var conn = _database.GetConnection()) {
+                using (var cmd = new SqlCommand(selectSql, conn)) {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    using (var reader = cmd.ExecuteReader()) {
+                        while (reader.Read()) {
+                            pedido.Id = reader.GetInt32(reader.GetOrdinal("PED_ID"));
+
+                            if (!pedidoDict.ContainsKey(pedido.Id)) {
+                                pedido.DataHora = reader.GetDateTime(reader.GetOrdinal("PED_DATA_HORA"));
+                                pedido.Status = reader.GetString(reader.GetOrdinal("PED_STATUS"));
+                                pedido.Mesa = new Mesa {
+                                    Id = reader.GetInt32(reader.GetOrdinal("MSA_ID")),
+                                    Numero = reader.GetString(reader.GetOrdinal("MSA_NUMERO")),
+                                    Status = (StatusMesa)reader.GetInt32(reader.GetOrdinal("MSA_STATUS"))
+                                };
+                                pedido.Usuario = new Usuario {
+                                    Id = reader.GetInt32(reader.GetOrdinal("USU_ID")),
+                                    Nome = reader.GetString(reader.GetOrdinal("USU_NOME"))
+                                };
+
+                                pedidoDict[pedido.Id] = pedido;
+                            }
+
+                            pedido = pedidoDict[pedido.Id];
+
+                            var itemPedido = new ItemPedido {
+                                Id = reader.GetInt32(reader.GetOrdinal("ITP_ID")),
+                                Quantidade = reader.GetInt32(reader.GetOrdinal("ITP_QUANTIDADE")),
+                                Status = reader.GetString(reader.GetOrdinal("ITP_STATUS")),
+                                Observacoes = reader.IsDBNull(reader.GetOrdinal("ITP_OBSERVACOES")) ? null : reader.GetString(reader.GetOrdinal("ITP_OBSERVACOES")),
+                                Prato = new Prato {
+                                    Id = reader.GetInt32(reader.GetOrdinal("PRA_ID")),
+                                    Nome = reader.GetString(reader.GetOrdinal("PRA_NOME")),
+                                    Descricao = reader.GetString(reader.GetOrdinal("PRA_DESCRICAO")),
+                                    Preco = reader.GetDecimal(reader.GetOrdinal("PRA_PRECO"))
+                                }
+                            };
+
+                            pedido.ItensPedido.Add(itemPedido);
+                        }
+                    }
+                }
+            }
+            return pedido;
+        }
+
 
         public async Task Update(EntidadeDominio entidadeDominio) {
             string updateSQL = "UPDATE PEDIDOS SET PED_STATUS = 'FINALIZADO' WHERE PED_ID = @Id;";

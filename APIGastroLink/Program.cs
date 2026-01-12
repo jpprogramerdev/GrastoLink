@@ -72,6 +72,7 @@ builder.Services.AddTransient<IDAOCategoriaPrato, DAOCategoriaPrato>();
 builder.Services.AddTransient<IDAOPrato, DAOPrato>();
 builder.Services.AddTransient<IDAOPedido, DAOPedido>();
 builder.Services.AddTransient<IDAOPagamento, DAOPagamento>();
+builder.Services.AddTransient<IDAOFormaPagamento, DAOFormaPagamento>();
 
 builder.Services.AddTransient<IPedidoService, PedidoService>();
 

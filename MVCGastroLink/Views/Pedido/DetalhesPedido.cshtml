@@ -1,0 +1,109 @@
+﻿@model PedidoResponseDTO
+
+@{
+    ViewData["Title"] = $"Detalhes #{Model.Id}";
+}
+<link rel="stylesheet" href="~/css/print-pedido.css" asp-append-version="true" />
+
+<div id="area-impressao">
+    <fieldset class="border rounded p-3 mb-4">
+        <legend class="float-none w-auto px-2">Pedido @Model.Id - Mesa @Model.Mesa.Numero</legend>
+    </fieldset>
+
+    <fieldset class="border rounded p-3 mb-4">
+        <legend class="float-none w-auto px-2">Mesa</legend>
+
+        <div class="mb-3">
+            <label class="form-label">Mesa</label>
+            <input type="text" readonly value="@Model.Mesa.Numero" />
+        </div>
+    </fieldset>
+
+    <fieldset class="border rounded p-3 mb-4">
+        <legend class="float-none w-auto px-2">Itens do Pedido</legend>
+
+        <div id="itens" class="mb-3">
+            @{
+                int i = 0;
+
+                foreach (var item in Model.Itens) {
+                    i++;
+
+                    <div class="border rounded p-2 mb-2">
+                        <label class="form-label">Prato @i:</label>
+                        <input type="text" class="form-control quantidade mb-2" value="@item.Prato.Nome" readonly />
+
+                        <label class="form-label">Quantidade:</label>
+                        <input type="number" class="form-control quantidade mb-2" value="@item.Quantidade" readonly />
+
+                        <label class="form-label">Observações:</label>
+                        <input type="text" class="form-control observacao mb-2" value="@(item.Observacoes == null ? "Sem Observação" : item.Observacoes)" readonly />
+
+                        <label class="form-label">Valor Unitario:</label>
+                        <input type="text" class="form-control observacao mb-2" value="@item.Prato.Preco" readonly />
+
+                        <label class="form-label">Valor Total (unit. * quant.):</label>
+                        <input type="text" class="form-control observacao mb-2" value="@(item.Prato.Preco* item.Quantidade)" readonly />
+                    </div>
+                }
+            }
+        </div>
+    </fieldset>
+</div>
+
+
+<div class="container-button">
+    <button type="button" class="btn btn-primary" onclick="window.print()">
+        Imprimir Pedido
+    </button>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalPagamento">
+        Gerar Pagamento
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalPagamento" tabindex="-1" aria-labelledby="modalPagamentoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <form asp-action="GerarPagamento" asp-controller="Pagamento" method="post">
+                <input type="hidden" id="formaPagamentoId" name="FormaPagamentoId" />
+                <input type="hidden" id="PedidoId" name="PedidoId" value="@Model.Id"/>
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPagamentoLabel">Pagamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="totalPago" class="form-label">Valor pago:</label>
+                        <input type="number" class="form-control" id="ValorPago" name="ValorPago" step="0.01"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="totalPago" class="form-label">Desconto:</label>
+                        <input type="number" class="form-control" id="Desconto" name="Desconto" step="0.01" />
+                    </div>
+
+                </div>
+
+                <div class="modal-body">
+                    <div id="tipos-pagamento"></div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Confirmar
+                    </button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/js/api-modalFormaPagamento.js" asp-append-version="true"></script>

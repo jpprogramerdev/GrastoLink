@@ -4,14 +4,14 @@ using MVCGastroLink.DTO;
 using System.Net.Http.Headers;
 
 namespace MVCGastroLink.Controllers {
-    public class CaixaController : Controller{
+    [Authorize(Roles ="CAIXA")]
+    public class CaixaController : Controller {
         private readonly IHttpClientFactory _httpClientFactory;
 
         public CaixaController(IHttpClientFactory httpClientFactory) {
             _httpClientFactory = httpClientFactory;
         }
 
-        [Authorize(Roles = "CAIXA")]
         public async Task<IActionResult> Caixa() {
             var client = _httpClientFactory.CreateClient("ApiGastroLink");
 
@@ -35,6 +35,10 @@ namespace MVCGastroLink.Controllers {
             }
 
             return View(pedidos);
+        }
+
+        public IActionResult Pagamento() {
+            return View();
         }
     }
 }
