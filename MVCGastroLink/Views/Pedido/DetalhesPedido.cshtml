@@ -2,6 +2,12 @@
 
 @{
     ViewData["Title"] = $"Detalhes #{Model.Id}";
+
+    if (TempData["FalhaGerarPagamento"] != null){
+        <div class="alert alert-danger" role="alert">
+            @TempData["FalhaGerarPagamento"]
+        </div>
+    }
 }
 <link rel="stylesheet" href="~/css/print-pedido.css" asp-append-version="true" />
 
@@ -76,6 +82,11 @@
                 </div>
 
                 <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="totalPago" class="form-label">Valor Total:</label>
+                        <input type="number" class="form-control" id="ValorTotal" name="ValorTotal" asp-for="@Model.ValorTotal" readonly/>
+                    </div>
+
                     <div class="mb-3">
                         <label for="totalPago" class="form-label">Valor pago:</label>
                         <input type="number" class="form-control" id="ValorPago" name="ValorPago" step="0.01"/>
